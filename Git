@@ -1,0 +1,30 @@
+1. Git clone ‘url’
+2. Cd ‘url of cloned project’
+3. git init
+4. git pull origin master
+5. git checkout -b <name of branch>
+6. git add .
+7. git commit -m ‘file change message’
+8. git push origin <name of branch>
+9. <Create pull request>
+10. <Review>
+
+// delete branch locally
+git branch -d localBranchName
+git branch -D localBranchName
+
+// delete branch remotely
+git push origin --delete remoteBranchName
+
+list your branches. a * will appear next to the currently active branch
+git branch
+
+create a new branch at the current commit
+git branch [branch-name]
+
+switch to another branch and check it out into your working directory
+git checkout
+
+merge the specified branch’s history into the current one
+git merge [branch]
+
