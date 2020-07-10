@@ -1,3 +1,4 @@
+<?php require("includes/functions.php") ;  ?>
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -37,7 +38,7 @@
       <div class="login_wrapper">
         <div class="animate form login_form">
           <section class="login_content">
-            <form>
+            <form method="POST">
               <h1>Admin Login</h1>
               <div>
                 <input
@@ -45,6 +46,7 @@
                   class="form-control"
                   placeholder="Username"
                   required=""
+                  name="staff_ID"
                 />
               </div>
               <div>
@@ -53,19 +55,21 @@
                   class="form-control"
                   placeholder="Password"
                   required=""
+                  name="password"
                 />
               </div>
               <div>
-                <a class="btn btn-default submit" href="index.html">Log in</a>
-                <a class="reset_pass" href="#">Lost your password?</a>
+              <div>
+                <button class="to_register" type="submit" name="login" >
+                Register
+                </button>
               </div>
 
               <div class="clearfix"></div>
-
               <div class="separator">
                 <p class="change_link">
                   New Admin?
-                  <a href="#signup" class="to_register"> Create Account </a>
+                  <a href="#signup" class="to_register"> Register </a>
                 </p>
 
                 <div class="clearfix"></div>
@@ -86,14 +90,15 @@
 
         <div id="register" class="animate form registration_form">
           <section class="login_content">
-            <form>
+            <form method="POST">
               <h1>Admin SignUp</h1>
               <div>
                 <input
                   type="text"
                   class="form-control"
-                  placeholder="Username"
+                  placeholder="staff_ID"
                   required=""
+                  name="staff_ID"
                 />
               </div>
               <div>
@@ -102,18 +107,31 @@
                   class="form-control"
                   placeholder="Email"
                   required=""
+                  name="email"
                 />
               </div>
               <div>
                 <input
                   type="password"
                   class="form-control"
-                  placeholder="Password"
+                  placeholder="pass"
                   required=""
+                  name="pass"
                 />
               </div>
               <div>
-                <a class="btn btn-default submit" href="index.html">Submit</a>
+                <input
+                  type="password"
+                  class="form-control"
+                  placeholder="pass2"
+                  required=""
+                  name="pass2"
+                />
+              </div>
+              <div>
+                <button class="to_register" type="submit" name="register" >
+                Register
+                </button>
               </div>
 
               <div class="clearfix"></div>

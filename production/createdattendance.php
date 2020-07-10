@@ -52,19 +52,19 @@
                         <div class="menu_section">
                             <ul class="nav side-menu">
                                 <li>
-                                    <a href="index.html"><i class="fa fa-home"></i> Home</a>
+                                    <a href="index.php"><i class="fa fa-home"></i> Home</a>
                                 </li>
                                 <li>
-                                    <a href="regiteruser.html"><i class="fa fa-user"></i> Register User</a>
+                                    <a href="regiteruser.php"><i class="fa fa-user"></i> Register User</a>
                                 </li>
                                 <li>
-                                    <a href="createattendance.html"><i class="fa fa-plus"></i> Create Attendance</a>
+                                    <a href="createattendance.php"><i class="fa fa-plus"></i> Create Attendance</a>
                                 </li>
                                 <li>
-                                    <a href="createdattendance.html"><i class="fa fa-check"></i> Created Attendance</a>
+                                    <a href="createdattendance.php"><i class="fa fa-check"></i> Created Attendance</a>
                                 </li>
                                 <li>
-                                    <a href="viewattendance.html"><i class="fa fa-eye"></i> View Attendance</a>
+                                    <a href="viewattendance.php"><i class="fa fa-eye"></i> View Attendance</a>
                                 </li>
                             </ul>
                         </div>
@@ -73,7 +73,7 @@
 
                     <!-- /menu footer buttons -->
                     <div class="sidebar-footer hidden-small">
-                        <a data-toggle="tooltip" data-placement="top" title="Logout" href="login.html">
+                        <a data-toggle="tooltip" data-placement="top" title="Logout" href="login.php">
                             <span class="glyphicon glyphicon-off" aria-hidden="true"></span>
                         </a>
                     </div>
@@ -97,16 +97,16 @@
                                 <div class="dropdown-menu dropdown-usermenu pull-right"
                                     aria-labelledby="navbarDropdown">
                                     <a class="dropdown-item" href=""><i class="fa fa-home pull-right"></i> Home</a>
-                                    <a class="dropdown-item" href="regiteruser.html"><i
+                                    <a class="dropdown-item" href="regiteruser.php"><i
                                             class="fa fa-user pull-right"></i> Register User</a>
-                                    <a class="dropdown-item" href="createattendance.html"><i
+                                    <a class="dropdown-item" href="createattendance.php"><i
                                             class="fa fa-plus pull-right"></i> Create
                                         Attendance</a>
-                                        <a class="dropdown-item" href="createdattendance.html"><i class="fa fa-check pull-right"></i> Created
+                                        <a class="dropdown-item" href="createdattendance.php"><i class="fa fa-check pull-right"></i> Created
                                             Attendance</a>
-                                    <a class="dropdown-item" href="viewattendance.html"><i
+                                    <a class="dropdown-item" href="viewattendance.php"><i
                                             class="fa fa-eye pull-right"></i> View Attendance</a>
-                                    <a class="dropdown-item" href="login.html"><i class="fa fa-sign-out pull-right"></i>
+                                    <a class="dropdown-item" href="login.php"><i class="fa fa-sign-out pull-right"></i>
                                         Log Out</a>
                                 </div>
                             </li>
