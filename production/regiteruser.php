@@ -1,3 +1,6 @@
+<?php
+ require("includes/functions.php") ; 
+?>
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -172,6 +175,8 @@
                       id="demo-form2"
                       data-parsley-validate
                       class="form-horizontal form-label-left"
+                      method="POST"
+                      enctype="multipart/form-data"
                     >
                       <div class="item form-group">
                         <label
@@ -185,6 +190,7 @@
                             id="first-name"
                             required="required"
                             class="form-control"
+                            name="fName"
                           />
                         </div>
                       </div>
@@ -198,7 +204,7 @@
                           <input
                             type="text"
                             id="last-name"
-                            name="last-name"
+                            name="lName"
                             required="required"
                             class="form-control"
                           />
@@ -215,7 +221,7 @@
                             id="middle-name"
                             class="form-control"
                             type="text"
-                            name="middle-name"
+                            name="mName"
                             required="required"
                           />
                         </div>
@@ -226,10 +232,10 @@
                           >Gender <span class="required">*</span></label
                         >
                         <div class="col-md-6 col-sm-6">
-                          <select class="form-control" required>
+                          <select class="form-control" name="gender" required>
                             <option value>Choose option</option>
-                            <option>Male</option>
-                            <option>Female</option>
+                            <option value="Male">Male</option>
+                            <option value="Female">Female</option>
                           </select>
                         </div>
                       </div>
@@ -251,6 +257,7 @@
                             onclick="this.type='date'"
                             onblur="this.type='text'"
                             onmouseout="timeFunctionLong(this)"
+                            name="DOB"
                           />
                           <script>
                             function timeFunctionLong(input) {
@@ -268,7 +275,7 @@
                         >
                         <div class="btn btn-primary btn-sm col-md-6 col-sm-6">
                           <span>Choose file</span>
-                          <input type="file" required="required" />
+                          <input type="file" required="required" name="image"/>
                         </div>
                       </div>
 
@@ -332,7 +339,7 @@
                               >
                                 Close
                               </button>
-                              <button type="button" class="btn btn-primary">
+                              <button type="submit" class="btn btn-primary">
                                 Submit
                               </button>
                             </div>

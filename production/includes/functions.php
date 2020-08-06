@@ -1,7 +1,27 @@
 <?php 
 require("config.php") ;  
 
-    //sign UP
+    //register user
+    if (isset($_POST['register_std'])) 
+    {
+
+
+        $sess = "SELECT * FROM session WHERE status = 'Active' Limit 1";
+        $result = mysqli_query($connection, $sess);
+        $id = mysqli_fetch_assoc($result);
+        $admission_session = $id['id'];
+        $active_session = $id['id'];
+        
+
+        //register
+        $query ="INSERT INTO students (Student_ID, First_name, Last_name, Gender, DOB, Email, Phone, College, 
+                                    Department, Program, Ative_session, admission_session, address, image)
+                        VALUES('$userID', '$firstname', '$lastname', '$gender', '$DOB', '$email', '$phone', '$college',
+                        '$department', '$program', '$active_session', '$admission_session', '$address', '$file')";
+        mysqli_query($connection, $query);
+        echo '<script>alert("Course already exist")</script>';
+    }
+    //login
     if (isset($_POST['register']))
     {
         $staff_ID = mysqli_real_escape_string($connection, $_POST['staff_ID']);
@@ -45,17 +65,17 @@ require("config.php") ;
     //login
     if (isset($_POST['login']))
     {
-        $staff_ID = mysqli_real_escape_string($connection, $_POST['staff_ID']);
+        $sID = mysqli_real_escape_string($connection, $_POST['ID']);
         $password1 = mysqli_real_escape_string($connection, $_POST['password']);
 
         $password = md5($password1);
         
-        $query = "SELECT * FROM admins WHERE staff_ID = '$staff_ID' AND password = '$password'";
+        $query = "SELECT * FROM admins WHERE D = '$staff_ID' AND password = '$password'";
         $result = mysqli_query($connection, $query);
         
         if(mysqli_num_rows($result) == 1)
         {
-            $_SESSION['staff_ID'];
+            $_SESSION['ID'];
             header('location: index.php');
         }
         else
