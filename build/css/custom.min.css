@@ -10,6 +10,7 @@
     url("https://netdna.bootstrapcdn.com/bootstrap/3.0.0/fonts/glyphicons-halflings-regular.svg#glyphicons-halflingsregular")
       format("svg");
 }
+
 .glyphicon {
   position: relative;
   top: 1px;

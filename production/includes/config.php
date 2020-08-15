@@ -2,7 +2,7 @@
     session_start();
     $servername = "localhost";
     $username = "root";
-    $password = "";
+    $password = "root";
     $dbname = "chapel_attendance";
     $connection = new mysqli($servername, $username, $password, $dbname);
 
@@ -10,6 +10,3 @@
     {
         die("connection failed: " . $connection->connect_error);
     }
-
-    
-?>

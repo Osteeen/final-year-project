@@ -1,0 +1,287 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <!-- Meta, title, CSS, favicons, etc. -->
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="icon" href="images/logo.jpg" type="image/ico" />
+
+    <title>Record Attendance</title>
+
+    <!-- Bootstrap -->
+    <link
+      href="../vendors/bootstrap/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <!-- Font Awesome -->
+    <link
+      href="../vendors/font-awesome/css/font-awesome.min.css"
+      rel="stylesheet"
+    />
+    <!-- NProgress -->
+    <link href="../vendors/nprogress/nprogress.css" rel="stylesheet" />
+
+    <!-- Custom Theme Style -->
+    <link href="../build/css/custom.min.css" rel="stylesheet" />
+  </head>
+
+  <body>
+    <div class="container-fluid ">
+      <div class="row py-5 px-3">
+        <div class="col-md-6 col-sm-6">
+          <div class="x_panel">
+            <div class="x_title">
+                <h2>Student </h2>
+                <div class="clearfix"></div>
+            </div>
+            <div class="x_content">
+              <br />
+              <form
+                id="demo-form2"
+                data-parsley-validate
+                class="form-horizontal form-label-left"
+                method="POST"
+                enctype="multipart/form-data"
+              >
+                <div class="item form-group">
+                  <label
+                    class="col-form-label col-md-3 col-sm-3 label-align"
+                    for="first-name"
+                    >First Name
+                    <span class="required">*</span>
+                  </label>
+                  <div class="col-md-6 col-sm-6">
+                    <input
+                      readonly
+                      placeholder="First Name"
+                      type="text"
+                      id="first-name"
+                      required="required"
+                      class="form-control"
+                      name="fName"
+                    />
+                  </div>
+                </div>
+                <div class="item form-group">
+                  <label
+                    class="col-form-label col-md-3 col-sm-3 label-align"
+                    for="last-name"
+                    >Last Name
+                    <span class="required">*</span>
+                  </label>
+                  <div class="col-md-6 col-sm-6">
+                    <input
+                      readonly
+                      placeholder="Last Name"
+                      type="text"
+                      id="last-name"
+                      name="lName"
+                      required="required"
+                      class="form-control"
+                    />
+                  </div>
+                </div>
+                <div class="item form-group">
+                  <label
+                    for="middle-name"
+                    class="col-form-label col-md-3 col-sm-3 label-align"
+                    >Middle Name <span class="required">*</span></label
+                  >
+                  <div class="col-md-6 col-sm-6">
+                    <input
+                      readonly
+                      placeholder="Middle Name"
+                      id="middle-name"
+                      class="form-control"
+                      type="text"
+                      name="mName"
+                      required="required"
+                    />
+                  </div>
+                </div>
+                <div class="item form-group">
+                  <label
+                    for="matric-number"
+                    class="col-form-label col-md-3 col-sm-3 label-align"
+                    >Matric Number <span class="required">*</span></label
+                  >
+                  <div class="col-md-6 col-sm-6">
+                    <input
+                      readonly
+                      placeholder="Matric Number"
+                      id="matric-number"
+                      class="form-control"
+                      type="text"
+                      name="matricnumber"
+                      required="required"
+                    />
+                  </div>
+                </div>
+                <div class="item form-group">
+                  <label
+                    for="dept"
+                    class="col-form-label col-md-3 col-sm-3 label-align"
+                    >Department <span class="required">*</span></label
+                  >
+                  <div class="col-md-6 col-sm-6">
+                    <input
+                      readonly
+                      placeholder="Department"
+                      id="dept"
+                      class="form-control"
+                      type="text"
+                      name="dept"
+                      required="required"
+                    />
+                  </div>
+                </div>
+                <div class="item form-group">
+                  <label
+                    for="dept"
+                    class="col-form-label col-md-3 col-sm-3 label-align"
+                    >Level <span class="required">*</span></label
+                  >
+                  <div class="col-md-6 col-sm-6">
+                    <input
+                      readonly
+                      placeholder="Level"
+                      id="level"
+                      class="form-control"
+                      type="text"
+                      name="level"
+                      required="required"
+                    />
+                  </div>
+                </div>
+
+                <div class="item form-group">
+                  <label
+                    for="phone"
+                    class="col-form-label col-md-3 col-sm-3 label-align"
+                    >Phone Number <span class="required">*</span></label
+                  >
+                  <div class="col-md-6 col-sm-6">
+                    <input
+                      readonly
+                      placeholder="Phone"
+                      id="phone"
+                      class="form-control"
+                      type="number"
+                      name="phone"
+                      required="required"
+                    />
+                  </div>
+                </div>
+                <div class="item form-group">
+                  <label
+                    for="dept"
+                    class="col-form-label col-md-3 col-sm-3 label-align"
+                    >Level <span class="required">*</span></label
+                  >
+                  <div class="col-md-6 col-sm-6">
+                    <input
+                      readonly
+                      placeholder="Male"
+                      id="gender"
+                      class="form-control"
+                      type="text"
+                      name="gender"
+                      required="required"
+                    />
+                  </div>
+                </div>
+              </form>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-6 col-sm-6">
+            <div class="x_panel">
+                <div class="x_content">
+                    <br />
+                    
+            </div>
+        </div>
+      </div>
+      
+    </div>
+    </div>
+    <div class="container-fluid ">
+        <div class="row py-5 px-3">
+            <div class="col-md-6 col-sm-6">
+                <div class="x_panel">
+                    <div class="x_content">
+                        <div class="x_title">
+                            <h2>Staff</h2>
+                            <div class="clearfix"></div>
+                        </div>
+                        <br />
+                        <form id="demo-form2" data-parsley-validate class="form-horizontal form-label-left" method="POST"
+                            enctype="multipart/form-data">
+                            <div class="item form-group">
+                                <label class="col-form-label col-md-3 col-sm-3 label-align" for="first-name">First Name <span
+                                        class="required">*</span>
+                                </label>
+                                <div class="col-md-6 col-sm-6">
+                                    <input readonly placeholder="First Name" type="text" id="first-name" required="required" class="form-control" name="fName" />
+                                </div>
+                            </div>
+                            <div class="item form-group">
+                                <label class="col-form-label col-md-3 col-sm-3 label-align" for="last-name">Last Name <span
+                                        class="required">*</span>
+                                </label>
+                                <div class="col-md-6 col-sm-6">
+                                    <input readonly placeholder="Last Name"  type="text" id="last-name" name="lName" required="required" class="form-control" />
+                                </div>
+                            </div>
+                            <div class="item form-group">
+                                <label for="middle-name" class="col-form-label col-md-3 col-sm-3 label-align">Middle Name <span
+                                        class="required">*</span></label>
+                                <div class="col-md-6 col-sm-6">
+                                    <input readonly placeholder="Middle Name"  id="middle-name" class="form-control" type="text" name="mName" required="required" />
+                                </div>
+                            </div>
+                            <div class="item form-group">
+                                <label for="staff" class="col-form-label col-md-3 col-sm-3 label-align">Staff <span
+                                        class="required">*</span></label>
+                                <div class="col-md-6 col-sm-6">
+                                    <input readonly placeholder="Academic Staff" id="staff" class="form-control" type="text" name="staff" required="required" />
+                                </div>
+                            </div>
+                            <div class="item form-group">
+                                <label for="staffgender" class="col-form-label col-md-3 col-sm-3 label-align">Gender <span
+                                        class="required">*</span></label>
+                                <div class="col-md-6 col-sm-6">
+                                    <input readonly placeholder="Male" id="staffgender" class="form-control" type="text" name="staffgender"
+                                        required="required" />
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-6 col-sm-6">
+                <div class="x_panel">
+                    <div class="x_content">
+                        <br />
+                        
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    </div>
+    <script src="../vendors/jquery/dist/jquery.min.js"></script>
+    <!-- Bootstrap -->
+    <script src="../vendors/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- FastClick -->
+    <script src="../vendors/fastclick/lib/fastclick.js"></script>
+    <!-- NProgress -->
+    <script src="../vendors/nprogress/nprogress.js"></script>
+    <!-- jQuery Smart Wizard -->
+    <script src="../vendors/jQuery-Smart-Wizard/js/jquery.smartWizard.js"></script>
+    <!-- Custom Theme Scripts -->
+    <script src="../build/js/custom.min.js"></script>
+  </body>
+</html>
