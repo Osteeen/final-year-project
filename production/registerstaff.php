@@ -1,5 +1,10 @@
 <?php
-require("includes/functions.php");
+    require("includes/functions.php");
+	$staffID = $_SESSION['admin_ID'];
+	$connection = new mysqli("localhost", "root","", "chapel_attendance");	
+	$account = mysqli_query($connection,  "SELECT * FROM staffs WHERE staff_ID = '$staffID'");
+	$row = mysqli_fetch_array($account);
+
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -39,7 +44,7 @@ require("includes/functions.php");
                         </div>
                         <div class="profile_info">
                             <span>Welcome,</span>
-                            <h2>Admin</h2>
+                            <h2><?php echo $row['first_name']; ?> <?php echo $row['last_name']; ?> <?php echo $row['mName']; ?></h2>
                         </div>
                     </div>
                     <!-- /menu profile quick info -->
@@ -51,7 +56,7 @@ require("includes/functions.php");
                         <div class="menu_section">
                             <ul class="nav side-menu">
                                 <li>
-                                    <a href="index.php"><i class="fa fa-home"></i> Home</a>
+                                    <a href="home.php"><i class="fa fa-home"></i> Home</a>
                                 </li>
                                 <li><a><i class="fa fa-user"></i> Register User <span class="fa fa-chevron-down"></span></a>
                                     <ul class="nav child_menu">
@@ -76,7 +81,7 @@ require("includes/functions.php");
 
                     <!-- /menu footer buttons -->
                     <div class="sidebar-footer hidden-small">
-                        <a data-toggle="tooltip" data-placement="top" title="Logout" href="login.php">
+                        <a data-toggle="tooltip" data-placement="top" title="Logout" href="index.php">
                             <span class="glyphicon glyphicon-off" aria-hidden="true"></span>
                         </a>
                     </div>
@@ -97,7 +102,7 @@ require("includes/functions.php");
                                     <img src="images/logo.jpg" alt="" />Admin
                                 </a>
                                 <div class="dropdown-menu dropdown-usermenu pull-right" aria-labelledby="navbarDropdown">
-                                    <a class="dropdown-item" href="index.php"><i class="fa fa-home pull-right"></i> Home</a>
+                                    <a class="dropdown-item" href="home.php"><i class="fa fa-home pull-right"></i> Home</a>
                                     <a class="dropdown-item" href="regiteruser.php"><i class="fa fa-user pull-right"></i> Register User</a>
                                     <a class="dropdown-item" href="createattendance.php"><i class="fa fa-plus pull-right"></i> Create
                                         Attendance</a>
@@ -105,7 +110,7 @@ require("includes/functions.php");
                                         Attendance</a>
                                     <a class="dropdown-item" href="viewattendance.php"><i class="fa fa-eye pull-right"></i> View Attendance</a>
 
-                                    <a class="dropdown-item" href="login.php"><i class="fa fa-sign-out pull-right"></i> Log Out</a>
+                                    <a class="dropdown-item" href="index.php"><i class="fa fa-sign-out pull-right"></i> Log Out</a>
                                 </div>
                             </li>
                         </ul>
@@ -130,6 +135,13 @@ require("includes/functions.php");
                                     <br />
                                     <form id="demo-form2" data-parsley-validate class="form-horizontal form-label-left" method="POST" enctype="multipart/form-data">
                                         <div class="item form-group">
+                                            <label class="col-form-label col-md-3 col-sm-3 label-align" for="first-name">Staff ID <span class="required">*</span>
+                                            </label>
+                                            <div class="col-md-6 col-sm-6">
+                                                <input type="text" id="first-name" required="required" class="form-control" name="staff_ID" />
+                                            </div>
+                                        </div>
+                                        <div class="item form-group">
                                             <label class="col-form-label col-md-3 col-sm-3 label-align" for="first-name">First Name <span class="required">*</span>
                                             </label>
                                             <div class="col-md-6 col-sm-6">
@@ -149,16 +161,33 @@ require("includes/functions.php");
                                                 <input id="middle-name" class="form-control" type="text" name="mName" required="required" />
                                             </div>
                                         </div>
-
-
                                         <div class="form-group row">
-                                            <label class="control-label col-md-3 col-sm-3 label-align">Staff <span class="required">*</span></label>
+                                            <label class="control-label col-md-3 col-sm-3 label-align">Designation <span class="required">*</span></label>
                                             <div class="col-md-6 col-sm-6">
-                                                <select class="form-control" name="staff" required>
+                                                <select class="form-control" name="designation" required>
                                                     <option value>Choose option</option>
                                                     <option value="Academic">Academic</option>
+                                                    <option value="Management">Management</option>
                                                     <option value="Non-Academic">Non-Academic</option>
                                                 </select>
+                                            </div>
+                                        </div>
+                                        <div class="form-group row">
+                                            <label class="control-label col-md-3 col-sm-3 label-align">Department <span class="required">*</span></label>
+                                            <div class="col-md-6 col-sm-6">
+                                                <select class="form-control" name="department" required>
+                                                    <option value>Choose Department</option>
+                                                    <option value="CIT">CIT</option>
+                                                    <option value="ECO">ECO</option>
+                                                    <option value="PHY">PHY</option>
+                                                </select>
+                                            </div>
+                                        </div>
+                                        <div class="item form-group">
+                                            <label class="col-form-label col-md-3 col-sm-3 label-align" for="first-name">Position <span class="required">*</span>
+                                            </label>
+                                            <div class="col-md-6 col-sm-6">
+                                                <input type="text" id="first-name" required="required" class="form-control" name="position" />
                                             </div>
                                         </div>
                                         <div class="item form-group">
@@ -179,18 +208,18 @@ require("includes/functions.php");
                                         </div>
 
                                         <div class="file-field item form-group row">
-                                            <label class="control-label col-md-3 col-sm-3 label-align">Upload Photo<span class="required">*</span></label>
+                                            <label class="control-label col-md-3 col-sm-3 label-align">Upload Photo</label>
                                             <div class="btn btn-primary btn-sm col-md-6 col-sm-6">
                                                 <span>Choose file</span>
-                                                <input type="file" required="required" name="image" />
+                                                <input type="file" name="image" />
                                             </div>
                                         </div>
 
                                         <!-- Button trigger modal -->
                                         <div class="file-field item form-group row">
                                             <label class="control-label col-md-3 col-sm-3 label-align">Register Fingerprint
-                                                <span class="required">*</span></label>
-                                            <div class="btn btn-primary btn-sm col-md-6 col-sm-6" type="button" required="required" class="btn btn-primary form-group row btn-sm col-md-6 col-sm-6" data-toggle="modal" data-target="#exampleModalCenter">
+                                                </label>
+                                            <div class="btn btn-primary btn-sm col-md-6 col-sm-6" type="button" class="btn btn-primary form-group row btn-sm col-md-6 col-sm-6" data-toggle="modal" data-target="#exampleModalCenter">
                                                 Register Fingerprint
                                             </div>
                                         </div>
@@ -214,7 +243,7 @@ require("includes/functions.php");
                                                         <button type="button" class="btn btn-secondary" data-dismiss="modal">
                                                             Close
                                                         </button>
-                                                        <button type="submit" class="btn btn-primary">
+                                                        <button type="submit" name="register_staff" class="btn btn-primary">
                                                             Submit
                                                         </button>
                                                     </div>

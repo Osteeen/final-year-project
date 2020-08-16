@@ -1,30 +1,11 @@
 <?php 
 require("config.php") ;  
 
-    //register user
-    if (isset($_POST['register_std'])) 
-    {
-
-
-        $sess = "SELECT * FROM session WHERE status = 'Active' Limit 1";
-        $result = mysqli_query($connection, $sess);
-        $id = mysqli_fetch_assoc($result);
-        $admission_session = $id['id'];
-        $active_session = $id['id'];
-        
-
-        //register
-        $query ="INSERT INTO students (Student_ID, First_name, Last_name, Gender, DOB, Email, Phone, College, 
-                                    Department, Program, Ative_session, admission_session, address, image)
-                        VALUES('$userID', '$firstname', '$lastname', '$gender', '$DOB', '$email', '$phone', '$college',
-                        '$department', '$program', '$active_session', '$admission_session', '$address', '$file')";
-        mysqli_query($connection, $query);
-        echo '<script>alert("Course already exist")</script>';
-    }
-    //login
-    if (isset($_POST['register']))
+    //register Admin
+    if (isset($_POST['register_admin']))
     {
         $staff_ID = mysqli_real_escape_string($connection, $_POST['staff_ID']);
+        $admin_ID = mysqli_real_escape_string($connection, $_POST['admin_ID']);
         $email = mysqli_real_escape_string($connection, $_POST['email']);
         $password1 = mysqli_real_escape_string($connection, $_POST['pass']);
         $password2 = mysqli_real_escape_string($connection, $_POST['pass2']);
@@ -34,55 +15,128 @@ require("config.php") ;
         if ($password1 != $password2){ echo '<script>alert("password  do not match")</script>';}
 
         //check if user already exist
-        $user_check_query = "SELECT * FROM admins WHERE staff_ID = '$staff_ID' OR email = '$email' LIMIT 1";
-        $result = mysqli_query($connection, $user_check_query);
+        $admin_check_query = "SELECT * FROM admins WHERE staff_ID = '$admin_ID' LIMIT 1";
+        $result = mysqli_query($connection, $admin_check_query);
         $user = mysqli_fetch_assoc($result);
 
 
-        if ($user['staff_ID']=== $staff_ID)
+        if ($user['staff_ID']=== $admin_ID)
         {
-            echo '<script>alert("User ID already exist")</script>';
+            //check if user already exist
+            $staff_check_query = "SELECT * FROM staffs WHERE staff_ID = '$staff_ID' LIMIT 1";
+            $result = mysqli_query($connection, $staff_check_query);
+            $user = mysqli_fetch_assoc($result);
+
+            if($user['staff_ID']==$staff_ID)
+            {
+                $password = md5($password1);
+
+                $query ="INSERT INTO admins (id, email, staff_ID, password)
+                        VALUES('', '$email', '$staff_ID','$password')";
+                mysqli_query($connection, $query);
+                echo '<script>alert("New Admin Added Successfully")</script>';
+                header('location: login.php#signin');
+            }
+            else
+            {
+                echo '<script>alert("'.$staff_ID.' is not a staff")</script>';
+            }
         }
-        elseif ($user['email']=== $email)
-        {
-            echo '<script>alert("Email already exist")</script>';
-        }
+
         else
         {
-            $password = md5($password1);
-
-            $query ="INSERT INTO admins (id, email, staff_ID, password)
-                    VALUES('', '$email', '$staff_ID','$password')";
-            mysqli_query($connection, $query);
-            
-            $_SESSION['userID'] = $userID;
-            $_SESSION['success'] = "You are logged in";
-            header('location: index.php');
+            echo '<script>alert("already an Admin")</script>';
         }
     }
 
 
-    //login
+    //login Amin
     if (isset($_POST['login']))
     {
-        $sID = mysqli_real_escape_string($connection, $_POST['ID']);
+        $ID = mysqli_real_escape_string($connection, $_POST['ID']);
         $password1 = mysqli_real_escape_string($connection, $_POST['password']);
 
         $password = md5($password1);
         
-        $query = "SELECT * FROM admins WHERE D = '$staff_ID' AND password = '$password'";
-        $result = mysqli_query($connection, $query);
+        $query = "SELECT * FROM admins WHERE staff_ID = '$ID' AND password = '$password'";
+        $results = mysqli_query($connection, $query);
         
-        if(mysqli_num_rows($result) == 1)
-        {
-            $_SESSION['ID'];
-            header('location: index.php');
+        if(mysqli_num_rows($results) == 1)
+        {   
+            $_SESSION['admin_ID'] = $ID;
+            header('location: home.php');
         }
         else
         {
-            echo '<script>alert("Wrong user ID or Password")</script>';
+            echo '<script>alert("Wrong user ID/Email or Password")</script>';
         }
 
     }
+
+
+        //register staff
+        if (isset($_POST['register_staff']))
+        {
+            $staff_ID = mysqli_real_escape_string($connection, $_POST['staff_ID']);
+            $fname = mysqli_real_escape_string($connection, $_POST['fName']);
+            $lname = mysqli_real_escape_string($connection, $_POST['lName']);
+            $mName = mysqli_real_escape_string($connection, $_POST['mName']);
+            $gender = mysqli_real_escape_string($connection, $_POST['gender']);
+            $phone = mysqli_real_escape_string($connection, $_POST['phone']);
+            $department = mysqli_real_escape_string($connection, $_POST['department']);
+            $designation = mysqli_real_escape_string($connection, $_POST['designation']);
+            $fingerprint = mysqli_real_escape_string($connection, $_POST['fName']);
+            $position = mysqli_real_escape_string($connection, $_POST['position']);
+            $image = mysqli_real_escape_string($connection, $_POST['fName']);
+    
+            //check if user already exist
+            $staff_check_query = "SELECT * FROM staffs WHERE staff_ID = '$staff_ID' LIMIT 1";
+            $result = mysqli_query($connection, $staff_check_query);
+            $staff = mysqli_fetch_assoc($result);
+    
+            if ($staff['staff_ID']=== $staff_ID)
+            {
+                echo '<script>alert("Staff Already exist")</script>';
+            }
+            else
+            {
+                //register
+                $query ="INSERT INTO  staffs (id, staff_ID, first_name, last_name, mName, gender, phone, department, designation, fingerprint, position, image)
+                VALUES('', '$staff_ID', '$fname', '$lname', '$mName', '$gender', '$phone', '$department', '$designation', '$fingerprint', '$position', '$image')";
+                mysqli_query($connection, $query);
+            }
+        }
+         //register students
+         if (isset($_POST['register_student']))
+         {
+             $s_ID = mysqli_real_escape_string($connection, $_POST['s_ID']);
+             $fname = mysqli_real_escape_string($connection, $_POST['fName']);
+             $lname = mysqli_real_escape_string($connection, $_POST['lName']);
+             $mName = mysqli_real_escape_string($connection, $_POST['mName']);
+             $gender = mysqli_real_escape_string($connection, $_POST['gender']);
+             $phone = mysqli_real_escape_string($connection, $_POST['phone']);
+             $department = mysqli_real_escape_string($connection, $_POST['dept']);
+             $level = mysqli_real_escape_string($connection, $_POST['level']);
+             $fingerprint = mysqli_real_escape_string($connection, $_POST['fName']);
+             $program = mysqli_real_escape_string($connection, $_POST['program']);
+             $image = mysqli_real_escape_string($connection, $_POST['fName']);
+     
+             //check if user already exist
+             $student_check_query = "SELECT * FROM students WHERE mat_no = '$s_ID' LIMIT 1";
+             $result = mysqli_query($connection, $student_check_query);
+             $student = mysqli_fetch_assoc($result);
+     
+             if ($student['mat_no']=== $s_ID)
+             {
+                 echo '<script>alert("Student Already exist")</script>';
+             }
+             else
+             {
+                 //register
+                 $query ="INSERT INTO  students(id, mat_no, first_name, last_name, mName, gender, program, department, level, phone, fingerprint, image)
+                 VALUES('', '$s_ID', '$fname', '$lname', '$mName', '$gender', '$program', '$department', '$level', '$fingerprint', '$image')";
+                 mysqli_query($connection, $query);
+             }
+         }
 
 ?>

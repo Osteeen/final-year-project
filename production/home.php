@@ -17,14 +17,16 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <link rel="icon" href="images/logo.jpg" type="image/ico" />
 
-  <title>Chapel Attendance</title>
+  <title> Chapel Attendance</title>
 
   <!-- Bootstrap -->
   <link href="../vendors/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet" />
   <!-- Font Awesome -->
   <link href="../vendors/font-awesome/css/font-awesome.min.css" rel="stylesheet" />
   <!-- NProgress -->
-  <link href="../vendors/nprogress/nprogress.css" rel="stylesheet" />
+  <link href="../vendors/nprogress/nprogress.css" rel="stylesheet">
+  <!-- iCheck -->
+  <link href="../vendors/iCheck/skins/flat/green.css" rel="stylesheet">
 
   <!-- Custom Theme Style -->
   <link href="../build/css/custom.min.css" rel="stylesheet" />
@@ -35,6 +37,8 @@
     <div class="main_container">
       <div class="col-md-3 left_col">
         <div class="left_col scroll-view">
+
+
           <div class="clearfix"></div>
 
           <!-- menu profile quick info -->
@@ -58,6 +62,8 @@
                 <li>
                   <a href="home.php"><i class="fa fa-home"></i> Home</a>
                 </li>
+
+
                 <li><a><i class="fa fa-user"></i> Register User <span class="fa fa-chevron-down"></span></a>
                   <ul class="nav child_menu">
                     <li><a href="registerstudent.php">Register Student</a></li>
@@ -102,7 +108,7 @@
                   <img src="images/logo.jpg" alt="" />Admin
                 </a>
                 <div class="dropdown-menu dropdown-usermenu pull-right" aria-labelledby="navbarDropdown">
-                  <a class="dropdown-item" href="home.php"><i class="fa fa-home pull-right"></i> Home</a>
+                  <a class="dropdown-item" href=""><i class="fa fa-home pull-right"></i> Home</a>
                   <a class="dropdown-item" href="regiteruser.php"><i class="fa fa-user pull-right"></i> Register User</a>
                   <a class="dropdown-item" href="createattendance.php"><i class="fa fa-plus pull-right"></i> Create
                     Attendance</a>
@@ -123,49 +129,114 @@
       <div class="right_col" role="main">
         <div class="">
           <div class="clearfix"></div>
+
           <div class="row">
-            <div class="col-md-12 col-sm-12">
-              <div class="x_panel">
-                <div class="x_title">
-                  <h2>Create New Attendance</h2>
+            <div class="col-md-12">
+              <div class="">
+                <div class="x_content">
+                  <div class="row">
+                    <div class="animated flipInY col-lg-3 col-md-3 col-sm-6">
+                      <div class="tile-stats">
+                        <div class="icon">
+                          <i class="fa fa-users"></i>
+                        </div>
+                        <div class="count">5009</div>
+
+                        <h3>Total Users</h3>
+                      </div>
+                    </div>
+                    <div class="animated flipInY col-lg-3 col-md-3 col-sm-6">
+                      <div class="tile-stats">
+                        <div class="icon">
+                          <i class="fa fa-user"></i>
+                        </div>
+                        <div class="count">3490</div>
+
+                        <h3>Previous Attendees</h3>
+                      </div>
+                    </div>
+                    <div class="animated flipInY col-lg-3 col-md-3 col-sm-6">
+                      <div class="tile-stats">
+                        <div class="icon">
+                          <i class="fa fa-male"></i>
+                        </div>
+                        <div class="count">2509</div>
+
+                        <h3>Total Males</h3>
+                      </div>
+                    </div>
+                    <div class="animated flipInY col-lg-3 col-md-3 col-sm-6">
+                      <div class="tile-stats">
+                        <div class="icon">
+                          <i class="fa fa-female"></i>
+                        </div>
+                        <div class="count">2500</div>
+
+                        <h3>Total Females</h3>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-md-4 col-sm-6">
+              <div class="x_panel fixed_height_120">
+                <div class="text-center">
+                  <h2>Register User</h2>
+                  <hr>
+                  </hr>
+
                   <div class="clearfix"></div>
                 </div>
-                <div class="x_content">
-                  <br />
-                  <form id="demo-form2" data-parsley-validate class="form-horizontal form-label-left">
-                    <div class="item form-group">
-                      <label class="col-form-label col-md-3 col-sm-3 label-align" for="first-name">Church Event Name <span class="required">*</span>
-                      </label>
-                      <div class="col-md-6 col-sm-6">
-                        <input type="text" id="first-name" required="required" class="form-control" />
-                      </div>
-                    </div>
 
-                    <div class="item form-group">
-                      <label class="col-form-label col-md-3 col-sm-3 label-align" for="twelve-hour-clock">Date Of Event
-                        <span class="required">*</span>
-                      </label>
-                      <div class="col-md-6 col-sm-6">
-                        <input id="birthday" class="date-picker form-control" placeholder="dd-mm-yyyy" type="text" required="required" type="text" onfocus="this.type='date'" onmouseover="this.type='date'" onclick="this.type='date'" onblur="this.type='text'" onmouseout="timeFunctionLong(this)" />
-                        <script>
-                          function timeFunctionLong(input) {
-                            setTimeout(function() {
-                              input.type = "text";
-                            }, 60000);
-                          }
-                        </script>
-                      </div>
-                    </div>
-                    <div class="file-field item form-group row">
-                      <label class="control-label col-md-3 col-sm-3 label-align">
-                        <span class="required"></span></label>
-                      <div class="btn btn-primary btn-sm col-md-6 col-sm-6" type="button" required="required" class="btn btn-primary form-group row btn-sm col-md-6 col-sm-6" data-toggle="modal" data-target="#exampleModalCenter">
-                        Create
-                      </div>
-                    </div>
-
-                  </form>
+                <div class="x_content text-center">
+                  <a href="regiteruser.php" class="btn btn-app"> <i class="fa fa-user"></i> Register </a>
                 </div>
+              </div>
+            </div>
+            <div class="col-md-4 col-sm-6">
+              <div class="x_panel fixed_height_120">
+                <div class="text-center">
+                  <h2>Create Attendance</h2>
+                  <hr>
+                  </hr>
+
+                  <div class="clearfix"></div>
+                </div>
+                <div class="x_content text-center">
+                  <a href="createattendance.php" class="btn btn-app">
+                    <i class="fa fa-plus"></i> Create
+                  </a>
+                </div>
+              </div>
+            </div>
+            <div class="col-md-4 col-sm-6">
+              <div class="x_panel fixed_height_120">
+                <div class="text-center">
+                  <h2>View Attendance</h2>
+                  <hr>
+                  </hr>
+
+                  <div class="clearfix"></div>
+                </div>
+
+                <div class="x_content text-center">
+                  <a href="viewattendance.php" class="btn btn-app"> <i class="fa fa-eye"></i> View </a>
+                </div>
+              </div>
+            </div>
+
+          </div>
+          <div class="col-md-12 col-sm-12">
+            <div class="x_panel">
+              <div class="x_title">
+                <h2>Attendance Chart <small>2020</small></h2>
+                <div class="clearfix"></div>
+              </div>
+              <div class="x_content">
+                <div id="graph_bar" style="width:100%; height:280px;"></div>
               </div>
             </div>
           </div>
@@ -185,6 +256,7 @@
       <!-- /footer content -->
     </div>
   </div>
+
   <!-- jQuery -->
   <script src="../vendors/jquery/dist/jquery.min.js"></script>
   <!-- Bootstrap -->
@@ -193,8 +265,10 @@
   <script src="../vendors/fastclick/lib/fastclick.js"></script>
   <!-- NProgress -->
   <script src="../vendors/nprogress/nprogress.js"></script>
-  <!-- jQuery Smart Wizard -->
-  <script src="../vendors/jQuery-Smart-Wizard/js/jquery.smartWizard.js"></script>
+  <!-- morris.js -->
+  <script src="../vendors/raphael/raphael.min.js"></script>
+  <script src="../vendors/morris.js/morris.min.js"></script>
+
   <!-- Custom Theme Scripts -->
   <script src="../build/js/custom.min.js"></script>
 </body>

@@ -77,7 +77,7 @@
 
           <!-- /menu footer buttons -->
           <div class="sidebar-footer hidden-small">
-            <a data-toggle="tooltip" data-placement="top" title="Logout" href="login.php">
+            <a data-toggle="tooltip" data-placement="top" title="Logout" href="index.php">
               <span class="glyphicon glyphicon-off" aria-hidden="true"></span>
             </a>
           </div>
@@ -105,7 +105,7 @@
                   <a class="dropdown-item" href="recordattendance.php"><i class="fa fa-check pull-right"></i> Record
                     Attendance</a>
                   <a class="dropdown-item" href="viewattendance.php"><i class="fa fa-eye pull-right"></i> View Attendance</a>
-                  <a class="dropdown-item" href="login.php"><i class="fa fa-sign-out pull-right"></i> Log Out</a>
+                  <a class="dropdown-item" href="index.php"><i class="fa fa-sign-out pull-right"></i> Log Out</a>
                 </div>
               </li>
             </ul>

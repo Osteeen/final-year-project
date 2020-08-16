@@ -1,5 +1,10 @@
 <?php
-require("includes/functions.php");
+    require("includes/functions.php");
+	$staffID = $_SESSION['admin_ID'];
+	$connection = new mysqli("localhost", "root","", "chapel_attendance");	
+	$account = mysqli_query($connection,  "SELECT * FROM staffs WHERE staff_ID = '$staffID'");
+	$row = mysqli_fetch_array($account);
+
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -39,7 +44,7 @@ require("includes/functions.php");
                         </div>
                         <div class="profile_info">
                             <span>Welcome,</span>
-                            <h2>Admin</h2>
+                            <h2><?php echo $row['first_name']; ?> <?php echo $row['last_name']; ?> <?php echo $row['mName']; ?></h2>
                         </div>
                     </div>
                     <!-- /menu profile quick info -->
@@ -51,7 +56,7 @@ require("includes/functions.php");
                         <div class="menu_section">
                             <ul class="nav side-menu">
                                 <li>
-                                    <a href="index.php"><i class="fa fa-home"></i> Home</a>
+                                    <a href="home.php"><i class="fa fa-home"></i> Home</a>
                                 </li>
                                 <li><a><i class="fa fa-user"></i> Register User <span class="fa fa-chevron-down"></span></a>
                                     <ul class="nav child_menu">
@@ -76,7 +81,7 @@ require("includes/functions.php");
 
                     <!-- /menu footer buttons -->
                     <div class="sidebar-footer hidden-small">
-                        <a data-toggle="tooltip" data-placement="top" title="Logout" href="login.php">
+                        <a data-toggle="tooltip" data-placement="top" title="Logout" href="index.php">
                             <span class="glyphicon glyphicon-off" aria-hidden="true"></span>
                         </a>
                     </div>
@@ -97,7 +102,7 @@ require("includes/functions.php");
                                     <img src="images/logo.jpg" alt="" />Admin
                                 </a>
                                 <div class="dropdown-menu dropdown-usermenu pull-right" aria-labelledby="navbarDropdown">
-                                    <a class="dropdown-item" href="index.php"><i class="fa fa-home pull-right"></i> Home</a>
+                                    <a class="dropdown-item" href="home.php"><i class="fa fa-home pull-right"></i> Home</a>
                                     <a class="dropdown-item" href="regiteruser.php"><i class="fa fa-user pull-right"></i> Register User</a>
                                     <a class="dropdown-item" href="createattendance.php"><i class="fa fa-plus pull-right"></i> Create
                                         Attendance</a>
@@ -105,7 +110,7 @@ require("includes/functions.php");
                                         Attendance</a>
                                     <a class="dropdown-item" href="viewattendance.php"><i class="fa fa-eye pull-right"></i> View Attendance</a>
 
-                                    <a class="dropdown-item" href="login.php"><i class="fa fa-sign-out pull-right"></i> Log Out</a>
+                                    <a class="dropdown-item" href="index.php"><i class="fa fa-sign-out pull-right"></i> Log Out</a>
                                 </div>
                             </li>
                         </ul>
@@ -152,13 +157,33 @@ require("includes/functions.php");
                                         <div class="item form-group">
                                             <label for="matric-number" class="col-form-label col-md-3 col-sm-3 label-align">Matric Number <span class="required">*</span></label>
                                             <div class="col-md-6 col-sm-6">
-                                                <input id="matric-number" class="form-control" type="text" name="matricnumber" required="required" />
+                                                <input id="matric-number" class="form-control" type="text" name="s_ID" required="required" />
                                             </div>
                                         </div>
-                                        <div class="item form-group">
-                                            <label for="dept" class="col-form-label col-md-3 col-sm-3 label-align">Department <span class="required">*</span></label>
+                                        <div class="form-group row">
+                                            <label class="control-label col-md-3 col-sm-3 label-align">Program <span class="required">*</span></label>
                                             <div class="col-md-6 col-sm-6">
-                                                <input id="dept" class="form-control" type="text" name="dept" required="required" />
+                                                <select class="form-control" name="program" required>
+                                                    <option value>Choose option</option>
+                                                    <option value="Bsc">Bsc.</option>
+                                                    <option value="Msc.">Msc.</option>
+                                                    <option value="Phd.">Phd.</option>
+                                                    <option value="Bea.">Bea.</option>
+                                                </select>
+                                            </div>
+                                        </div>
+                                        <div class="form-group row">
+                                            <label class="control-label col-md-3 col-sm-3 label-align">Deprtament <span class="required">*</span></label>
+                                            <div class="col-md-6 col-sm-6">
+                                                <select class="form-control" name="dept" required>
+                                                    <option value>Choose option</option>
+                                                    <option value="CIT">CIT</option>
+                                                    <option value="MTH">MTH</option>
+                                                    <option value="PHY">PHY</option>
+                                                    <option value="THG">THG</option>
+                                                    <option value="other">Other</option>
+
+                                                </select>
                                             </div>
                                         </div>
                                         <div class="form-group row">
@@ -191,33 +216,19 @@ require("includes/functions.php");
                                                 </select>
                                             </div>
                                         </div>
-                                        <div class="item form-group">
-                                            <label class="col-form-label col-md-3 col-sm-3 label-align">Date Of Birth <span class="required">*</span>
-                                            </label>
-                                            <div class="col-md-6 col-sm-6">
-                                                <input id="birthday" class="date-picker form-control" placeholder="dd-mm-yyyy" type="text" required="required" type="text" onfocus="this.type='date'" onmouseover="this.type='date'" onclick="this.type='date'" onblur="this.type='text'" onmouseout="timeFunctionLong(this)" name="DOB" />
-                                                <script>
-                                                    function timeFunctionLong(input) {
-                                                        setTimeout(function() {
-                                                            input.type = "text";
-                                                        }, 60000);
-                                                    }
-                                                </script>
-                                            </div>
-                                        </div>
                                         <div class="file-field item form-group row">
-                                            <label class="control-label col-md-3 col-sm-3 label-align">Upload Photo<span class="required">*</span></label>
+                                            <label class="control-label col-md-3 col-sm-3 label-align">Upload Photo<span>*</span></label>
                                             <div class="btn btn-primary btn-sm col-md-6 col-sm-6">
                                                 <span>Choose file</span>
-                                                <input type="file" required="required" name="image" />
+                                                <input type="file" name="image" />
                                             </div>
                                         </div>
 
                                         <!-- Button trigger modal -->
                                         <div class="file-field item form-group row">
                                             <label class="control-label col-md-3 col-sm-3 label-align">Register Fingerprint
-                                                <span class="required">*</span></label>
-                                            <div class="btn btn-primary btn-sm col-md-6 col-sm-6" type="button" required="required" class="btn btn-primary form-group row btn-sm col-md-6 col-sm-6" data-toggle="modal" data-target="#exampleModalCenter">
+                                                <span>*</span></label>
+                                            <div class="btn btn-primary btn-sm col-md-6 col-sm-6" type="button"  class="btn btn-primary form-group row btn-sm col-md-6 col-sm-6" data-toggle="modal" data-target="#exampleModalCenter">
                                                 Register Fingerprint
                                             </div>
                                         </div>
@@ -241,7 +252,7 @@ require("includes/functions.php");
                                                         <button type="button" class="btn btn-secondary" data-dismiss="modal">
                                                             Close
                                                         </button>
-                                                        <button type="submit" class="btn btn-primary">
+                                                        <button type="submit" name="register_student" class="btn btn-primary">
                                                             Submit
                                                         </button>
                                                     </div>

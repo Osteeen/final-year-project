@@ -1,3 +1,11 @@
+<?php 
+  session_start();
+	$staffID = $_SESSION['admin_ID'];
+	$connection = new mysqli("localhost", "root","", "chapel_attendance");	
+	$account = mysqli_query($connection,  "SELECT * FROM staffs WHERE staff_ID = '$staffID'");
+	$row = mysqli_fetch_array($account);
+
+?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -44,7 +52,7 @@
             </div>
             <div class="profile_info">
               <span>Welcome,</span>
-              <h2>Admin</h2>
+              <h2><?php echo $row['first_name']; ?> <?php echo $row['last_name']; ?> <?php echo $row['mName']; ?></h2>
             </div>
           </div>
           <!-- /menu profile quick info -->
@@ -56,7 +64,7 @@
             <div class="menu_section">
               <ul class="nav side-menu">
                 <li>
-                  <a href="index.php"><i class="fa fa-home"></i> Home</a>
+                  <a href="home.php"><i class="fa fa-home"></i> Home</a>
                 </li>
                 <li><a><i class="fa fa-user"></i> Register User <span class="fa fa-chevron-down"></span></a>
                   <ul class="nav child_menu">
@@ -81,7 +89,7 @@
 
           <!-- /menu footer buttons -->
           <div class="sidebar-footer hidden-small">
-            <a data-toggle="tooltip" data-placement="top" title="Logout" href="login.php">
+            <a data-toggle="tooltip" data-placement="top" title="Logout" href="index.php">
               <span class="glyphicon glyphicon-off" aria-hidden="true"></span>
             </a>
           </div>
@@ -102,7 +110,7 @@
                   <img src="images/logo.jpg" alt="" />Admin
                 </a>
                 <div class="dropdown-menu dropdown-usermenu pull-right" aria-labelledby="navbarDropdown">
-                  <a class="dropdown-item" href="index.php"><i class="fa fa-home pull-right"></i> Home</a>
+                  <a class="dropdown-item" href="home.php"><i class="fa fa-home pull-right"></i> Home</a>
                   <a class="dropdown-item" href="regiteruser.php"><i class="fa fa-user pull-right"></i> Register User</a>
                   <a class="dropdown-item" href="createattendance.php"><i class="fa fa-plus pull-right"></i> Create
                     Attendance</a>
@@ -110,7 +118,7 @@
                     Attendance</a>
                   <a class="dropdown-item" href="viewattendance.php"><i class="fa fa-eye pull-right"></i> View Attendance</a>
 
-                  <a class="dropdown-item" href="login.php"><i class="fa fa-sign-out pull-right"></i> Log Out</a>
+                  <a class="dropdown-item" href="index.php"><i class="fa fa-sign-out pull-right"></i> Log Out</a>
                 </div>
               </li>
             </ul>
