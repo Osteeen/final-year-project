@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Jul 10, 2020 at 03:50 AM
+-- Generation Time: Aug 17, 2020 at 11:32 AM
 -- Server version: 10.4.10-MariaDB
 -- PHP Version: 7.3.12
 
@@ -41,7 +41,9 @@ CREATE TABLE `admins` (
 INSERT INTO `admins` (`id`, `email`, `staff_ID`, `password`) VALUES
 (1, 'jimmy4carter@gmail.com ', '2222', '123456'),
 (4, 'jimmy000carter@gmail.com', '2354', '827ccb0eea8a706c4c34a16891f84e7b'),
-(5, 'admin@gmail.com', '1111', '4a7d1ed414474e4033ac29ccb8653d9b');
+(5, 'admin@gmail.com', '1111', '4a7d1ed414474e4033ac29ccb8653d9b'),
+(6, 'dani@gmail.com', '1234', '81dc9bdb52d04dc20036dbd8313ed055'),
+(7, 'dani@gmail.com', '5555', '8977ecbb8cb82d77fb091c7a7f186163');
 
 -- --------------------------------------------------------
 
@@ -108,13 +110,28 @@ CREATE TABLE `events` (
 
 CREATE TABLE `staffs` (
   `id` int(11) NOT NULL,
-  `staff_ID` int(11) NOT NULL,
-  `first_name` int(11) NOT NULL,
-  `last_name` int(11) NOT NULL,
-  `department` int(11) NOT NULL,
-  `designation` int(11) NOT NULL,
-  `fingerprint` int(11) NOT NULL
+  `staff_ID` varchar(255) NOT NULL,
+  `first_name` varchar(255) NOT NULL,
+  `last_name` varchar(255) NOT NULL,
+  `mName` varchar(255) NOT NULL,
+  `Gender` varchar(255) NOT NULL,
+  `phone` varchar(255) NOT NULL,
+  `department` varchar(255) NOT NULL,
+  `designation` varchar(255) NOT NULL,
+  `fingerprint` blob NOT NULL,
+  `position` varchar(255) NOT NULL,
+  `image` blob NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data for table `staffs`
+--
+
+INSERT INTO `staffs` (`id`, `staff_ID`, `first_name`, `last_name`, `mName`, `Gender`, `phone`, `department`, `designation`, `fingerprint`, `position`, `image`) VALUES
+(3, '1234', 'Jimmy', 'Joshua', 'Jack', 'Male', '0703565655', 'Academic', 'Academic', 0x4a696d6d79, 'HOD', 0x4a696d6d79),
+(4, '5555', 'Austin', 'John', 'IFI', 'Male', '0703565655', 'ECO', 'Management', 0x41757374696e, 'HOD', 0x41757374696e),
+(5, '0000', 'Solo', 'soda', 'Soka', 'Female', '0703565655', 'ECO', 'Academic', 0x536f6c6f, 'dean', 0x536f6c6f),
+(6, '3025', 'Gabi', 'Austin', 'Ob', 'Female', '08038660259', 'CIT', 'Management', 0x47616269, 'dean', 0x47616269);
 
 -- --------------------------------------------------------
 
@@ -127,10 +144,14 @@ CREATE TABLE `students` (
   `mat_no` int(11) NOT NULL,
   `first_name` int(11) NOT NULL,
   `last_name` int(11) NOT NULL,
-  `college` int(11) NOT NULL,
+  `mName` varchar(255) NOT NULL,
+  `gender` varchar(255) NOT NULL,
+  `program` varchar(255) NOT NULL,
   `department` int(11) NOT NULL,
   `level` int(11) NOT NULL,
-  `fingerprint` int(11) NOT NULL
+  `phone` varchar(255) NOT NULL,
+  `fingerprint` int(11) NOT NULL,
+  `image` blob NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
@@ -187,7 +208,7 @@ ALTER TABLE `students`
 -- AUTO_INCREMENT for table `admins`
 --
 ALTER TABLE `admins`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
 
 --
 -- AUTO_INCREMENT for table `attendance_student`
@@ -217,7 +238,7 @@ ALTER TABLE `events`
 -- AUTO_INCREMENT for table `staffs`
 --
 ALTER TABLE `staffs`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
 
 --
 -- AUTO_INCREMENT for table `students`
