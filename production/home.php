@@ -1,9 +1,9 @@
-<?php 
-  require("includes/functions.php");
-	$staffID = $_SESSION['admin_ID'];
-	$connection = new mysqli("localhost", "root","", "chapel_attendance");	
-	$account = mysqli_query($connection,  "SELECT * FROM staffs WHERE staff_ID = '$staffID'");
-	$row = mysqli_fetch_array($account);
+<?php
+require("includes/functions.php");
+$staffID = $_SESSION['admin_ID'];
+$connection = new mysqli("localhost", "root", "", "chapel_attendance");
+$account = mysqli_query($connection,  "SELECT * FROM staffs WHERE staff_ID = '$staffID'");
+$row = mysqli_fetch_array($account);
 
 ?>
 <!DOCTYPE html>
@@ -115,7 +115,7 @@
                   <a class="dropdown-item" href="recordattendance.php"><i class="fa fa-check pull-right"></i> Record
                     Attendance</a>
                   <a class="dropdown-item" href="viewattendance.php"><i class="fa fa-eye pull-right"></i> View Attendance</a>
-                  <a class="dropdown-item" href="index.php"><i class="fa fa-sign-out pull-right"></i> Log Out</a>
+
                 </div>
               </li>
             </ul>

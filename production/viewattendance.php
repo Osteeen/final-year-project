@@ -1,9 +1,9 @@
-<?php 
-  session_start();
-	$staffID = $_SESSION['admin_ID'];
-	$connection = new mysqli("localhost", "root","", "chapel_attendance");	
-	$account = mysqli_query($connection,  "SELECT * FROM staffs WHERE staff_ID = '$staffID'");
-	$row = mysqli_fetch_array($account);
+<?php
+session_start();
+$staffID = $_SESSION['admin_ID'];
+$connection = new mysqli("localhost", "root", "", "chapel_attendance");
+$account = mysqli_query($connection,  "SELECT * FROM staffs WHERE staff_ID = '$staffID'");
+$row = mysqli_fetch_array($account);
 
 ?>
 <!DOCTYPE html>
@@ -88,11 +88,11 @@
           <!-- /sidebar menu -->
 
           <!-- /menu footer buttons -->
-          <div class="sidebar-footer hidden-small">
-            <a data-toggle="tooltip" data-placement="top" title="Logout" href="index.php">
+          <form method="POST" class="sidebar-footer hidden-small">
+            <button type="submit" name="lock" data-toggle="tooltip" data-placement="top" title="Logout">
               <span class="glyphicon glyphicon-off" aria-hidden="true"></span>
-            </a>
-          </div>
+            </button>
+          </form>
           <!-- /menu footer buttons -->
         </div>
       </div>
@@ -117,8 +117,6 @@
                   <a class="dropdown-item" href="recordattendance.php"><i class="fa fa-check pull-right"></i> Record
                     Attendance</a>
                   <a class="dropdown-item" href="viewattendance.php"><i class="fa fa-eye pull-right"></i> View Attendance</a>
-
-                  <a class="dropdown-item" href="index.php"><i class="fa fa-sign-out pull-right"></i> Log Out</a>
                 </div>
               </li>
             </ul>

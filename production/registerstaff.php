@@ -1,9 +1,9 @@
 <?php
-    require("includes/functions.php");
-	$staffID = $_SESSION['admin_ID'];
-	$connection = new mysqli("localhost", "root","", "chapel_attendance");	
-	$account = mysqli_query($connection,  "SELECT * FROM staffs WHERE staff_ID = '$staffID'");
-	$row = mysqli_fetch_array($account);
+require("includes/functions.php");
+$staffID = $_SESSION['admin_ID'];
+$connection = new mysqli("localhost", "root", "", "chapel_attendance");
+$account = mysqli_query($connection,  "SELECT * FROM staffs WHERE staff_ID = '$staffID'");
+$row = mysqli_fetch_array($account);
 
 ?>
 <!DOCTYPE html>
@@ -110,7 +110,7 @@
                                         Attendance</a>
                                     <a class="dropdown-item" href="viewattendance.php"><i class="fa fa-eye pull-right"></i> View Attendance</a>
 
-                                    <a class="dropdown-item" href="index.php"><i class="fa fa-sign-out pull-right"></i> Log Out</a>
+
                                 </div>
                             </li>
                         </ul>
@@ -218,7 +218,7 @@
                                         <!-- Button trigger modal -->
                                         <div class="file-field item form-group row">
                                             <label class="control-label col-md-3 col-sm-3 label-align">Register Fingerprint
-                                                </label>
+                                            </label>
                                             <div class="btn btn-primary btn-sm col-md-6 col-sm-6" type="button" class="btn btn-primary form-group row btn-sm col-md-6 col-sm-6" data-toggle="modal" data-target="#exampleModalCenter">
                                                 Register Fingerprint
                                             </div>
