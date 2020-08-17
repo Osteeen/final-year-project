@@ -1,5 +1,5 @@
 <?php 
-  session_start();
+  require("includes/functions.php");
 	$staffID = $_SESSION['admin_ID'];
 	$connection = new mysqli("localhost", "root","", "chapel_attendance");	
 	$account = mysqli_query($connection,  "SELECT * FROM staffs WHERE staff_ID = '$staffID'");
@@ -86,11 +86,11 @@
           <!-- /sidebar menu -->
 
           <!-- /menu footer buttons -->
-          <div class="sidebar-footer hidden-small">
-            <a data-toggle="tooltip" data-placement="top" title="Logout" href="index.php">
+          <form method="POST" class="sidebar-footer hidden-small">
+            <button type="submit" name="lock" data-toggle="tooltip" data-placement="top" title="Logout">
               <span class="glyphicon glyphicon-off" aria-hidden="true"></span>
-            </a>
-          </div>
+            </button>
+          </form>
           <!-- /menu footer buttons -->
         </div>
       </div>

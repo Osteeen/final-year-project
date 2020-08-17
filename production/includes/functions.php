@@ -2,7 +2,8 @@
 require("config.php") ;  
 
 if (isset($_POST['lock'])) {
-    header('location: index.php#signin');
+    header('location: index.php');
+    session_destroy();
 }
     //register Admin
     if (isset($_POST['register_admin']))
