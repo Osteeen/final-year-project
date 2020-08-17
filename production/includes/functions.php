@@ -1,6 +1,9 @@
 <?php 
 require("config.php") ;  
 
+if (isset($_POST['lock'])) {
+    header('location: index.php#signin');
+}
     //register Admin
     if (isset($_POST['register_admin']))
     {
@@ -35,7 +38,7 @@ require("config.php") ;
                         VALUES('', '$email', '$staff_ID','$password')";
                 mysqli_query($connection, $query);
                 echo '<script>alert("New Admin Added Successfully")</script>';
-                header('location: login.php#signin');
+                header('location: index.php#signin');
             }
             else
             {
