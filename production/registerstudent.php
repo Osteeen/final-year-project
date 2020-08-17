@@ -79,12 +79,12 @@
                     </div>
                     <!-- /sidebar menu -->
 
-                    <!-- /menu footer buttons -->
-                    <div class="sidebar-footer hidden-small">
-                        <a data-toggle="tooltip" data-placement="top" title="Logout" href="index.php">
+                    <!-- /menu footer buttons -->                    
+                    <form method="POST" class="sidebar-footer hidden-small">
+                        <button type="submit" name="lock" data-toggle="tooltip" data-placement="top" title="Logout" href="index.php">
                             <span class="glyphicon glyphicon-off" aria-hidden="true"></span>
-                        </a>
-                    </div>
+                        </button>
+                    </form>
                     <!-- /menu footer buttons -->
                 </div>
             </div>
