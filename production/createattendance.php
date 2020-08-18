@@ -132,12 +132,12 @@ $row = mysqli_fetch_array($account);
                 </div>
                 <div class="x_content">
                   <br />
-                  <form id="demo-form2" data-parsley-validate class="form-horizontal form-label-left">
+                  <form id="demo-form2" method="POST" data-parsley-validate class="form-horizontal form-label-left">
                     <div class="item form-group">
                       <label class="col-form-label col-md-3 col-sm-3 label-align" for="first-name">Church Event Name <span class="required">*</span>
                       </label>
                       <div class="col-md-6 col-sm-6">
-                        <input type="text" id="first-name" required="required" class="form-control" />
+                        <input type="text" id="first-name" name="event_name" required="required" class="form-control" />
                       </div>
                     </div>
 
@@ -146,7 +146,7 @@ $row = mysqli_fetch_array($account);
                         <span class="required">*</span>
                       </label>
                       <div class="col-md-6 col-sm-6">
-                        <input id="birthday" class="date-picker form-control" placeholder="dd-mm-yyyy" type="text" required="required" type="text" onfocus="this.type='date'" onmouseover="this.type='date'" onclick="this.type='date'" onblur="this.type='text'" onmouseout="timeFunctionLong(this)" />
+                        <input id="birthday" name="date" class="date-picker form-control" placeholder="dd-mm-yyyy" type="text" required="required" type="text" onfocus="this.type='date'" onmouseover="this.type='date'" onclick="this.type='date'" onblur="this.type='text'" onmouseout="timeFunctionLong(this)" />
                         <script>
                           function timeFunctionLong(input) {
                             setTimeout(function() {
@@ -159,7 +159,7 @@ $row = mysqli_fetch_array($account);
                     <div class="file-field item form-group row">
                       <label class="control-label col-md-3 col-sm-3 label-align">
                         <span class="required"></span></label>
-                      <div class="btn btn-primary btn-sm col-md-6 col-sm-6" type="button" required="required" class="btn btn-primary form-group row btn-sm col-md-6 col-sm-6" data-toggle="modal" data-target="#exampleModalCenter">
+                      <div class="btn btn-primary btn-sm col-md-6 col-sm-6" type="button" required="required" name="add_event" class="btn btn-primary form-group row btn-sm col-md-6 col-sm-6" data-toggle="modal" data-target="#exampleModalCenter">
                         Create
                       </div>
                     </div>

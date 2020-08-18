@@ -111,38 +111,59 @@ if (isset($_POST['lock'])) {
                 echo '<script>alert("Staff registered successfully")</script>';
             }
         }
-         //register students
-         if (isset($_POST['register_student']))
-         {
-             $s_ID = mysqli_real_escape_string($connection, $_POST['s_ID']);
-             $fname = mysqli_real_escape_string($connection, $_POST['fName']);
-             $lname = mysqli_real_escape_string($connection, $_POST['lName']);
-             $mName = mysqli_real_escape_string($connection, $_POST['mName']);
-             $gender = mysqli_real_escape_string($connection, $_POST['gender']);
-             $phone = mysqli_real_escape_string($connection, $_POST['phone']);
-             $department = mysqli_real_escape_string($connection, $_POST['dept']);
-             $level = mysqli_real_escape_string($connection, $_POST['level']);
-             $fingerprint = mysqli_real_escape_string($connection, $_POST['fName']);
-             $program = mysqli_real_escape_string($connection, $_POST['program']);
-             $image = mysqli_real_escape_string($connection, $_POST['fName']);
-     
-             //check if user already exist
-             $student_check_query = "SELECT * FROM students WHERE mat_no = '$s_ID' LIMIT 1";
-             $result = mysqli_query($connection, $student_check_query);
-             $student = mysqli_fetch_assoc($result);
-     
-             if ($student['mat_no']=== $s_ID)
-             {
-                 echo '<script>alert("Student Already exist")</script>';
-             }
-             else
-             {
-                 //register
-                 $query ="INSERT INTO  students(id, mat_no, first_name, last_name, mName, gender, program, department, level, phone, fingerprint, image)
-                 VALUES('', '$s_ID', '$fname', '$lname', '$mName', '$gender', '$program', '$department', '$level', '$fingerprint', '$image')";
+        //register students
+        if (isset($_POST['register_student']))
+        {
+            $s_ID = mysqli_real_escape_string($connection, $_POST['s_ID']);
+            $fname = mysqli_real_escape_string($connection, $_POST['fName']);
+            $lname = mysqli_real_escape_string($connection, $_POST['lName']);
+            $mName = mysqli_real_escape_string($connection, $_POST['mName']);
+            $gender = mysqli_real_escape_string($connection, $_POST['gender']);
+            $phone = mysqli_real_escape_string($connection, $_POST['phone']);
+            $department = mysqli_real_escape_string($connection, $_POST['dept']);
+            $level = mysqli_real_escape_string($connection, $_POST['level']);
+            $fingerprint = mysqli_real_escape_string($connection, $_POST['fName']);
+            $program = mysqli_real_escape_string($connection, $_POST['program']);
+            $image = mysqli_real_escape_string($connection, $_POST['fName']);
+    
+            //check if user already exist
+            $student_check_query = "SELECT * FROM students WHERE mat_no = '$s_ID'";
+            $result = mysqli_query($connection, $student_check_query);
+    
+            if (mysqli_num_rows($result) >= 1)
+            {
+                echo '<script>alert("Student Already exist")</script>';
+            }
+            else
+            {
+                //register
+                $query ="INSERT INTO  students(id, mat_no, first_name, last_name, mName, gender, program, department, level, phone, fingerprint, image)
+                VALUES('', '$s_ID', '$fname', '$lname', '$mName', '$gender', '$program', '$department', '$level', '$fingerprint', '$image')";
+                mysqli_query($connection, $query);
+                echo '<script>alert("Student registered successfully")</script>';
+            }
+        }
+
+        if (isset($_POST['add_event']))
+        {
+            $event_name = mysqli_real_escape_string($connection, $_POST['event_name']);
+            $date = mysqli_real_escape_string($connection, $_POST['date']);
+            $time = mysqli_real_escape_string($connection, $_POST['time']);
+            $late_at = mysqli_real_escape_string($connection, $_POST['late_at']);
+
+            $result = mysqli_query($connection, "SELECT * FROM events WHERE name = '$event_name' AND date = '$date'");
+            //register
+            if (mysqli_num_rows($result) >= 1) {
+                echo '<script>alert("Event with same time and date already Exist..")</script>';
+            }
+            else{      
+                $query ="INSERT INTO  events(id, name, date, start_time, late_at)
+                VALUES('', '$event_name', '$date', '$time', '$late_at')";
                  mysqli_query($connection, $query);
-                 echo '<script>alert("Student registered successfully")</script>';
-             }
-         }
+                 echo '<script>alert("New Event Added")</script>';
+            }
+
+        }
+
 
 ?>
