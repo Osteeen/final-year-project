@@ -176,10 +176,9 @@ $row = mysqli_fetch_array($account);
                     </div>
                     <div class="file-field item form-group row">
                       <label class="control-label col-md-3 col-sm-3 label-align">
-                        <span class="required"></span></label>
-                      <div class="btn btn-primary btn-sm col-md-6 col-sm-6" type="button" required="required" name="add_event" class="btn btn-primary form-group row btn-sm col-md-6 col-sm-6" data-toggle="modal" data-target="#exampleModalCenter">
-                        Create
-                      </div>
+                      <button type="submit" name="add_event" class="btn btn-primary">
+                          Submit
+                      </button>
                     </div>
 
                   </form>
