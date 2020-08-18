@@ -17,6 +17,7 @@ $row = mysqli_fetch_array($account);
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <link rel="icon" href="images/logo.jpg" type="image/ico" />
 
+
   <title>Chapel Attendance</title>
 
   <!-- Bootstrap -->
@@ -147,13 +148,30 @@ $row = mysqli_fetch_array($account);
                       </label>
                       <div class="col-md-6 col-sm-6">
                         <input id="birthday" name="date" class="date-picker form-control" placeholder="dd-mm-yyyy" type="text" required="required" type="text" onfocus="this.type='date'" onmouseover="this.type='date'" onclick="this.type='date'" onblur="this.type='text'" onmouseout="timeFunctionLong(this)" />
-                        <script>
+                        <!-- <script>
                           function timeFunctionLong(input) {
                             setTimeout(function() {
                               input.type = "text";
                             }, 60000);
                           }
-                        </script>
+                        </script> -->
+                      </div>
+                    </div>
+                    <div class="item form-group ">
+                      <label class="col-form-label col-md-3 col-sm-3 label-align" for="starttime">Time Of Event
+                        <span class="required">*</span>
+                      </label>
+                      <div class="col-md-6 col-sm-6 ">
+                        <input name="time" placeholder="Select time of event" type="time" id="starttime" class="form-control timepicker">
+
+                      </div>
+                    </div>
+                    <div class="item form-group">
+                      <label class="col-form-label col-md-3 col-sm-3 label-align" for="lateat">Late At
+                        <span class="required">*</span>
+                      </label>
+                      <div class="col-md-6 col-sm-6">
+                        <input name="late_at" placeholder="late at" type="time" id="lateat" class="form-control timepicker">
                       </div>
                     </div>
                     <div class="file-field item form-group row">
@@ -197,6 +215,11 @@ $row = mysqli_fetch_array($account);
   <script src="../vendors/jQuery-Smart-Wizard/js/jquery.smartWizard.js"></script>
   <!-- Custom Theme Scripts -->
   <script src="../build/js/custom.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-timepicker/0.5.2/js/bootstrap-timepicker.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-timepicker/0.5.2/css/bootstrap-timepicker.css"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-timepicker/0.5.2/css/bootstrap-timepicker.min.css"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-timepicker/0.5.2/js/bootstrap-timepicker.js"></script>
+
 </body>
 
 </html>
