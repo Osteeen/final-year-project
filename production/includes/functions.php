@@ -144,7 +144,7 @@ if (isset($_POST['lock'])) {
             }
         }
 
-        if (isset($_POST['add_event']))
+        if (isset($_POST['addEvent']))
         {
             $event_name = mysqli_real_escape_string($connection, $_POST['event_name']);
             $date = mysqli_real_escape_string($connection, $_POST['date']);

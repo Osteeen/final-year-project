@@ -1,4 +1,5 @@
 <?php
+require("includes/functions.php");
 session_start();
 $staffID = $_SESSION['admin_ID'];
 $connection = new mysqli("localhost", "root", "", "chapel_attendance");
@@ -176,11 +177,10 @@ $row = mysqli_fetch_array($account);
                     </div>
                     <div class="file-field item form-group row">
                       <label class="control-label col-md-3 col-sm-3 label-align">
-                      <button type="submit" name="add_event" class="btn btn-primary">
+                      <button type="submit" name="addEvent" class="btn btn-primary">
                           Submit
                       </button>
                     </div>
-
                   </form>
                 </div>
               </div>
