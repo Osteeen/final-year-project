@@ -122,9 +122,9 @@ if (isset($_POST['lock'])) {
             $phone = mysqli_real_escape_string($connection, $_POST['phone']);
             $department = mysqli_real_escape_string($connection, $_POST['dept']);
             $level = mysqli_real_escape_string($connection, $_POST['level']);
-           ## $fingerprint = mysqli_real_escape_string($connection, $_POST['finger']);
+            $fingerprint = mysqli_real_escape_string($connection, $_POST['fName']);
             $program = mysqli_real_escape_string($connection, $_POST['program']);
-           ## $image = mysqli_real_escape_string($connection, $_POST['image']);
+            $image = mysqli_real_escape_string($connection, $_POST['fName']);
     
             //check if user already exist
             $student_check_query = "SELECT * FROM students WHERE mat_no = '$s_ID'";

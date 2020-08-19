@@ -4,7 +4,24 @@ $staffID = $_SESSION['admin_ID'];
 $connection = new mysqli("localhost", "root", "", "chapel_attendance");
 $account = mysqli_query($connection,  "SELECT * FROM staffs WHERE staff_ID = '$staffID'");
 $row = mysqli_fetch_array($account);
-
+                      //get total users
+                      $getstaffs = mysqli_query($connection,  "SELECT * FROM staffs");
+                      $staffcount=mysqli_num_rows($getstaffs);
+                      $getstudents = mysqli_query($connection,  "SELECT * FROM students");
+                      $studentcount=mysqli_num_rows($getstudents);
+                      $Total_staff_student = $staffcount+$studentcount;
+                      //get total male in the system
+                      $get_Student_male = mysqli_query($connection,  "SELECT * FROM students WHERE gender='Male'");
+                      $student_male_count=mysqli_num_rows($get_Student_male);
+                      $get_Staff_male = mysqli_query($connection,  "SELECT * FROM staffs WHERE Gender='Male'");
+                      $staff_male_count=mysqli_num_rows($get_Staff_male);
+                      $male_gender = $staff_male_count + $student_male_count;
+                      //get total female in the system
+                      $get_Student_female = mysqli_query($connection,  "SELECT * FROM students WHERE gender='Female'");
+                      $student_female_count=mysqli_num_rows($get_Student_female);
+                      $get_Staff_female = mysqli_query($connection,  "SELECT * FROM staffs WHERE Gender='Female'");
+                      $staff_female_count=mysqli_num_rows($get_Staff_female);
+                      $female_gender = $staff_female_count + $student_female_count;										
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -140,7 +157,7 @@ $row = mysqli_fetch_array($account);
                         <div class="icon">
                           <i class="fa fa-users"></i>
                         </div>
-                        <div class="count">5009</div>
+                        <div class="count"><?php echo $Total_staff_student;	 ?></div>
 
                         <h3>Total Users</h3>
                       </div>
@@ -160,7 +177,7 @@ $row = mysqli_fetch_array($account);
                         <div class="icon">
                           <i class="fa fa-male"></i>
                         </div>
-                        <div class="count">2509</div>
+                        <div class="count"><?php echo $male_gender;	 ?></div>
 
                         <h3>Total Males</h3>
                       </div>
@@ -170,7 +187,7 @@ $row = mysqli_fetch_array($account);
                         <div class="icon">
                           <i class="fa fa-female"></i>
                         </div>
-                        <div class="count">2500</div>
+                        <div class="count"><?php echo $female_gender;	 ?></div>
 
                         <h3>Total Females</h3>
                       </div>
