@@ -89,9 +89,9 @@ if (isset($_POST['lock'])) {
             $phone = mysqli_real_escape_string($connection, $_POST['phone']);
             $department = mysqli_real_escape_string($connection, $_POST['department']);
             $designation = mysqli_real_escape_string($connection, $_POST['designation']);
-            $fingerprint = mysqli_real_escape_string($connection, $_POST['fName']);
+           ## $fingerprint = mysqli_real_escape_string($connection, $_POST['finger']);
             $position = mysqli_real_escape_string($connection, $_POST['position']);
-            $image = mysqli_real_escape_string($connection, $_POST['fName']);
+           ## $image = mysqli_real_escape_string($connection, $_POST['image']);
     
             //check if user already exist
             $staff_check_query = "SELECT * FROM staffs WHERE staff_ID = '$staff_ID' LIMIT 1";
@@ -122,9 +122,9 @@ if (isset($_POST['lock'])) {
             $phone = mysqli_real_escape_string($connection, $_POST['phone']);
             $department = mysqli_real_escape_string($connection, $_POST['dept']);
             $level = mysqli_real_escape_string($connection, $_POST['level']);
-            $fingerprint = mysqli_real_escape_string($connection, $_POST['fName']);
+           ## $fingerprint = mysqli_real_escape_string($connection, $_POST['finger']);
             $program = mysqli_real_escape_string($connection, $_POST['program']);
-            $image = mysqli_real_escape_string($connection, $_POST['fName']);
+           ## $image = mysqli_real_escape_string($connection, $_POST['image']);
     
             //check if user already exist
             $student_check_query = "SELECT * FROM students WHERE mat_no = '$s_ID'";

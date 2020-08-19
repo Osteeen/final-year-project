@@ -1,6 +1,5 @@
 <?php
 require("includes/functions.php");
-session_start();
 $staffID = $_SESSION['admin_ID'];
 $connection = new mysqli("localhost", "root", "", "chapel_attendance");
 $account = mysqli_query($connection,  "SELECT * FROM staffs WHERE staff_ID = '$staffID'");
