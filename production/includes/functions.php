@@ -138,7 +138,7 @@ if (isset($_POST['lock'])) {
             {
                 //register
                 $query ="INSERT INTO  students(id, mat_no, first_name, last_name, mName, gender, program, department, level, phone, fingerprint, image)
-                VALUES('', '$s_ID', '$fname', '$lname', '$mName', '$gender', '$program', '$department', '$level', '$fingerprint', '$image')";
+                VALUES('', '$s_ID', '$fname', '$lname', '$mName', '$gender', '$program', '$department', '$level', '$phone', '$fingerprint', '$image')";
                 mysqli_query($connection, $query);
                 echo '<script>alert("Student registered successfully")</script>';
             }
