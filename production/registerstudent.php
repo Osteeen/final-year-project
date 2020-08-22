@@ -273,7 +273,18 @@ $row = mysqli_fetch_array($account);
                                                         </button>
                                                     </div>
                                                     <div class="modal-body">
-                                                        Register Fingerprint
+                                                        <div class="col-lg-12 col-sm-6">
+                                                            <div class="">
+                                                                <div class="card hovercard">
+                                                                    <div class="info">
+                                                                        <picture>
+                                                                            <source srcset="./images/fingerprint.gif" type="image/svg+xml" />
+                                                                            <img src="./images/fingerprint.gif" class="img-fluid img-thumbnail" alt="..." />
+                                                                        </picture>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
                                                     </div>
                                                     <div class="modal-footer">
                                                         <button type="button" class="btn btn-secondary" data-dismiss="modal">
