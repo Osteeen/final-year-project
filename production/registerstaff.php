@@ -177,9 +177,36 @@ $row = mysqli_fetch_array($account);
                                             <div class="col-md-6 col-sm-6">
                                                 <select class="form-control" name="department" required>
                                                     <option value>Choose Department</option>
-                                                    <option value="CIT">CIT</option>
-                                                    <option value="ECO">ECO</option>
-                                                    <option value="PHY">PHY</option>
+                                                    <option value="ee">B.A. Ed. Education English</option>
+                                                    <option value="els">B.A. English and Literary Studies</option>
+                                                    <option value="hir">B.A. History and International Relations</option>
+                                                    <option value="phy">B.A. Philosophy</option>
+                                                    <option value="rs">B.A. Religious Studies</option>
+                                                    <option value="em">B.Ed. Educational Management</option>
+                                                    <option value="gc">B.Ed. Guidance and Counseling</option>
+                                                    <option value="ss">B.Ed. Social Studies</option>
+                                                    <option value="bio">B.Sc. Ed. Biology</option>
+                                                    <option value="acc">B.Sc. Accounting</option>
+                                                    <option value="am">B.Sc. Applied Microbiology</option>
+                                                    <option value="lis">Library and Information Science, BLIS</option>
+                                                    <option value="bf">B.Sc. Banking and Finance</option>
+                                                    <option value="bch">B.Sc. Biochemistry</option>
+                                                    <option value="ba">B.Sc. Business Administration</option>
+                                                    <option value="cs">B.Sc. Computer Science</option>
+                                                    <option value="e">B.Sc. Economics</option>
+                                                    <option value="be">B.Sc. Ed. Business Education</option>
+                                                    <option value="ec">B.Sc. Ed. Education Chemistry</option>
+                                                    <option value="ee">B.Sc. Ed. Education Economics</option>
+                                                    <option value="ep">B.Sc. Ed. Education Physics</option>
+                                                    <option value="e">B.Sc. Entrepreneurship</option>
+                                                    <option value="ic">B.Sc. Industrial Chemistry</option>
+                                                    <option value="ma">B.Sc. Marketing and Advertising</option>
+                                                    <option value="mc">B.Sc. Mass Communication</option>
+                                                    <option value="pe">B.Sc. Physics with Electronics</option>
+                                                    <option value="psd">B.Sc. Political Science and Diplomacy</option>
+                                                    <option value="pa">B.Sc. Public Administration</option>
+                                                    <option value="boo">B.Sc. Botany</option>
+                                                    <option value="zoo">B.Sc. Zoology</option>
                                                 </select>
                                             </div>
                                         </div>

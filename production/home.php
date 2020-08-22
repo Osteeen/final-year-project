@@ -152,7 +152,7 @@ $row = mysqli_fetch_array($account);
               <div class="">
                 <div class="x_content">
                   <div class="row">
-                    <div class="animated flipInY col-lg-3 col-md-3 col-sm-6">
+                    <div class="animated flipInY col-lg-4 col-md-4 col-sm-6">
                       <div class="tile-stats">
                         <div class="icon">
                           <i class="fa fa-users"></i>
@@ -161,18 +161,8 @@ $row = mysqli_fetch_array($account);
 
                         <h3>Total Users</h3>
                       </div>
-                    </div>
-                    <div class="animated flipInY col-lg-3 col-md-3 col-sm-6">
-                      <div class="tile-stats">
-                        <div class="icon">
-                          <i class="fa fa-user"></i>
-                        </div>
-                        <div class="count">3490</div>
-
-                        <h3>Previous Attendees</h3>
-                      </div>
-                    </div>
-                    <div class="animated flipInY col-lg-3 col-md-3 col-sm-6">
+                    </div>               
+                    <div class="animated flipInY col-lg-4 col-md-4 col-sm-6">
                       <div class="tile-stats">
                         <div class="icon">
                           <i class="fa fa-male"></i>
@@ -182,7 +172,7 @@ $row = mysqli_fetch_array($account);
                         <h3>Total Males</h3>
                       </div>
                     </div>
-                    <div class="animated flipInY col-lg-3 col-md-3 col-sm-6">
+                    <div class="animated flipInY col-lg-4 col-md-4 col-sm-6">
                       <div class="tile-stats">
                         <div class="icon">
                           <i class="fa fa-female"></i>
@@ -246,7 +236,7 @@ $row = mysqli_fetch_array($account);
             </div>
 
           </div>
-          <div class="col-md-12 col-sm-12">
+          <!-- <div class="col-md-12 col-sm-12">
             <div class="x_panel">
               <div class="x_title">
                 <h2>Attendance Chart <small>2020</small></h2>
@@ -256,7 +246,7 @@ $row = mysqli_fetch_array($account);
                 <div id="graph_bar" style="width:100%; height:280px;"></div>
               </div>
             </div>
-          </div>
+          </div> -->
         </div>
       </div>
       <!-- /page content -->
