@@ -130,25 +130,32 @@ $row = mysqli_fetch_array($account);
 
 
                     <div class="row">
-                        <div class="col-md-4 col-sm-6">
-                            <div class="x_panel fixed_height_120">
-                                <div class="text-center">
-                                    <h2>Record Attendance</h2>
-                                    <hr>
-                                    </hr>
+                        <?php
+                        $getEvents = mysqli_query($connection, "SELECT * FROM events");
+                        $infoArray = mysqli_fetch_array($getEvents);
+                        $output = '';
 
-                                    <div class="clearfix"></div>
-                                </div>
-                                <div class="x_content text-center">
-                                    <p>Event Name: Mass</p>
-                                    <p>Date: 08/07/2020</p>
-                                    <p>Time: 12:00PM</p>
+                        $output .= '<div class="x_panel fixed_height_120">
+                                        <div class="text-center">
+                                            <h2>Record Attendance</h2>
+                                            <hr>
+                                            </hr>
 
-                                    <a href="sign.php" target="_blank" class=" btn btn-app">
-                                        <i class="fa fa-plus"></i> Record Event Attendance
-                                    </a>
-                                </div>
-                            </div>
+                                            <div class="clearfix"></div>
+                                        </div>
+                                        <div class="x_content text-center">
+                                            <p>Event Name: ' . $infoArray['name'] . ' </p>
+                                            <p>Date: 08/07/2020</p>
+                                            <p>Time: 12:00PM</p>
+
+                                            <a href="sign.php" target="_blank" class=" btn btn-app">
+                                                <i class="fa fa-plus"></i> Record Event Attendance
+                                            </a>
+                                        </div>
+                                    </div>'
+                        ?>
+                        <div class="col-md-4 col-sm-4">
+                            <?php echo $output; ?>
                         </div>
                     </div>
 
