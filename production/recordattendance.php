@@ -130,38 +130,38 @@ $row = mysqli_fetch_array($account);
 
 
                     <div class="row">
+
                         <?php
                         $getEvents = mysqli_query($connection, "SELECT * FROM events");
 
                         while ($infoArray = mysqli_fetch_array($getEvents)) {
                             $output = '';
 
-                            $output .= '<div class="x_panel fixed_height_120">
-                                        <div class="text-center">
-                                            <h2>Record Attendance</h2>
-                                            <hr>
-                                            </hr>
+                            $output .= '<div class="col-md-4 col-sm-4">
+                                                <div class="x_panel fixed_height_120">
+                                                <div class="text-center">
+                                                    <h2>Record Attendance</h2>
+                                                    <hr>
+                                                    </hr>
 
-                                            <div class="clearfix"></div>
+                                                    <div class="clearfix"></div>
+                                                </div>
+                                                <div class="x_content text-center">
+                                                    <p>Event Name: ' . $infoArray['name'] . ' </p>
+                                                    <p>Date: ' . $infoArray['date'] . ' </p>
+                                                    <p>Starting: ' . $infoArray['start_time'] . ' </p>
+                                                    <p>Late At: ' . $infoArray['late_at'] . ' </p>
+
+                                                    <a href="sign.php" target="_blank" class=" btn btn-app">
+                                                        <i class="fa fa-plus"></i> Record Event Attendance
+                                                    </a>
+                                                </div>
                                         </div>
-                                        <div class="x_content text-center">
-                                            <p>Event Name: ' . $infoArray['name'] . ' </p>
-                                            <p>Date: ' . $infoArray['date'] . ' </p>
-                                            <p>Starting: ' . $infoArray['start_time'] . ' </p>
-                                            <p>Late At: ' . $infoArray['late_at'] . ' </p>
-
-                                            <a href="sign.php" target="_blank" class=" btn btn-app">
-                                                <i class="fa fa-plus"></i> Record Event Attendance
-                                            </a>
-                                        </div>
-                                    </div>'; ?>
-                            <div class="col-md-4 col-sm-4">
-                            <?php
-
+                                        </div>';
                             echo $output;
                         }
-                            ?>
-                            </div>
+                        ?>
+
                     </div>
 
                 </div>
