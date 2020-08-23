@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Aug 19, 2020 at 06:44 PM
+-- Generation Time: Aug 23, 2020 at 04:52 PM
 -- Server version: 10.4.10-MariaDB
 -- PHP Version: 7.3.12
 
@@ -44,6 +44,20 @@ INSERT INTO `admins` (`id`, `email`, `staff_ID`, `password`) VALUES
 (5, 'admin@gmail.com', '1111', '4a7d1ed414474e4033ac29ccb8653d9b'),
 (6, 'dani@gmail.com', '1234', '81dc9bdb52d04dc20036dbd8313ed055'),
 (7, 'dani@gmail.com', '5555', '8977ecbb8cb82d77fb091c7a7f186163');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `attendance`
+--
+
+CREATE TABLE `attendance` (
+  `ID` int(11) NOT NULL,
+  `event_ID` varchar(255) NOT NULL,
+  `attandee_ID` varchar(255) NOT NULL,
+  `time_attendent` varchar(255) NOT NULL,
+  `date` varchar(255) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 -- --------------------------------------------------------
 
@@ -100,6 +114,13 @@ CREATE TABLE `events` (
   `start_time` varchar(255) DEFAULT NULL,
   `late_at` varchar(255) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data for table `events`
+--
+
+INSERT INTO `events` (`id`, `name`, `date`, `start_time`, `late_at`) VALUES
+(1, 'Christmas', '2020-08-19', '17:53', '17:57');
 
 -- --------------------------------------------------------
 
@@ -158,7 +179,8 @@ CREATE TABLE `students` (
 --
 
 INSERT INTO `students` (`id`, `mat_no`, `first_name`, `last_name`, `mName`, `gender`, `program`, `department`, `level`, `phone`, `fingerprint`, `image`) VALUES
-(1, '2354', 'Maria', 'Eden', 'IFI', 'Male', 'Bsc', 'MTH', '200', '0703565655', 0x4d61726961, 0x4d61726961);
+(1, '2354', 'Maria', 'Eden', 'IFI', 'Male', 'Bsc', 'MTH', '200', '0703565655', 0x4d61726961, 0x4d61726961),
+(2, '6061', 'Daniel', 'Austin', 'Jack', 'Female', 'Bsc', 'THG', '300', '0703565655', '', '');
 
 --
 -- Indexes for dumped tables
@@ -169,6 +191,12 @@ INSERT INTO `students` (`id`, `mat_no`, `first_name`, `last_name`, `mName`, `gen
 --
 ALTER TABLE `admins`
   ADD PRIMARY KEY (`id`);
+
+--
+-- Indexes for table `attendance`
+--
+ALTER TABLE `attendance`
+  ADD PRIMARY KEY (`ID`);
 
 --
 -- Indexes for table `attendance_student`
@@ -217,6 +245,12 @@ ALTER TABLE `admins`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
 
 --
+-- AUTO_INCREMENT for table `attendance`
+--
+ALTER TABLE `attendance`
+  MODIFY `ID` int(11) NOT NULL AUTO_INCREMENT;
+
+--
 -- AUTO_INCREMENT for table `attendance_student`
 --
 ALTER TABLE `attendance_student`
@@ -238,7 +272,7 @@ ALTER TABLE `department`
 -- AUTO_INCREMENT for table `events`
 --
 ALTER TABLE `events`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
 -- AUTO_INCREMENT for table `staffs`
@@ -250,7 +284,7 @@ ALTER TABLE `staffs`
 -- AUTO_INCREMENT for table `students`
 --
 ALTER TABLE `students`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
