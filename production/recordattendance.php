@@ -144,7 +144,7 @@ $row = mysqli_fetch_array($account);
                                     <p>Date: 08/07/2020</p>
                                     <p>Time: 12:00PM</p>
 
-                                    <a href="verifyfingerprint.html" target="_blank" class=" btn btn-app">
+                                    <a href="takefingerprint.php" target="_blank" class=" btn btn-app">
                                         <i class="fa fa-plus"></i> Record Event Attendance
                                     </a>
                                 </div>
