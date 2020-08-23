@@ -132,10 +132,11 @@ $row = mysqli_fetch_array($account);
                     <div class="row">
                         <?php
                         $getEvents = mysqli_query($connection, "SELECT * FROM events");
-                        $infoArray = mysqli_fetch_array($getEvents);
-                        $output = '';
 
-                        $output .= '<div class="x_panel fixed_height_120">
+                        while ($infoArray = mysqli_fetch_array($getEvents)) {
+                            $output = '';
+
+                            $output .= '<div class="x_panel fixed_height_120">
                                         <div class="text-center">
                                             <h2>Record Attendance</h2>
                                             <hr>
@@ -153,11 +154,14 @@ $row = mysqli_fetch_array($account);
                                                 <i class="fa fa-plus"></i> Record Event Attendance
                                             </a>
                                         </div>
-                                    </div>'
-                        ?>
-                        <div class="col-md-4 col-sm-4">
-                            <?php echo $output; ?>
-                        </div>
+                                    </div>'; ?>
+                            <div class="col-md-4 col-sm-4">
+                            <?php
+
+                            echo $output;
+                        }
+                            ?>
+                            </div>
                     </div>
 
                 </div>
