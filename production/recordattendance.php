@@ -145,8 +145,9 @@ $row = mysqli_fetch_array($account);
                                         </div>
                                         <div class="x_content text-center">
                                             <p>Event Name: ' . $infoArray['name'] . ' </p>
-                                            <p>Date: 08/07/2020</p>
-                                            <p>Time: 12:00PM</p>
+                                            <p>Date: ' . $infoArray['date'] . ' </p>
+                                            <p>Starting: ' . $infoArray['start_time'] . ' </p>
+                                            <p>Late At: ' . $infoArray['late_at'] . ' </p>
 
                                             <a href="sign.php" target="_blank" class=" btn btn-app">
                                                 <i class="fa fa-plus"></i> Record Event Attendance
