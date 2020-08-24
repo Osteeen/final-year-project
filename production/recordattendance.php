@@ -152,7 +152,7 @@ $row = mysqli_fetch_array($account);
                                                     <p>Starting: ' . $infoArray['start_time'] . ' </p>
                                                     <p>Late At: ' . $infoArray['late_at'] . ' </p>
 
-                                                    <a href="sign.php" target="_blank" class=" btn btn-app">
+                                                    <a href="sign.php?id='.$infoArray['id'].'" target="_blank" class=" btn btn-app">
                                                         <i class="fa fa-plus"></i> Record Event Attendance
                                                     </a>
                                                 </div>

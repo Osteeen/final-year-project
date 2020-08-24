@@ -1,6 +1,26 @@
 <?php
-
-
+    require("includes/functions.php");
+    $connection = new mysqli("localhost", "root", "", "chapel_attendance");
+    $id = $_GET['id'];
+    $getEvent = mysqli_query($connection,  "SELECT * FROM events WHERE id = '$id'");
+    $event = mysqli_fetch_array($getEvent);
+    
+    function userInfo($connection)
+	{
+        $output = '';
+        $output .= '
+                    <div class="info">
+                        <div class="">Name : Austin</div>
+                        <hr />
+                        <div class="">Matric Number : VUG/CSC/17/2383</div>
+                        <hr />
+                        <div class="">Department : Computer Science</div>
+                        <hr />
+                        <div class="">Level : 400</div>
+                    </div>
+                    ';
+		return $output;
+    }
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -29,7 +49,7 @@
     <div class="wrapper d-flex align-items-stretch">
         <!-- Page Content  -->
         <div id="content" class="p-3 p-md-3 pt-3">
-            <div class="container-fluid row">
+            <div class="container-fluid row" >
                 <div class="col-lg-6 col-sm-6">
                     <div class="">
                         <div class="card hovercard">
@@ -51,16 +71,10 @@
                 </div>
                 <div class="col-lg-6 col-sm-6">
                     <div class="">
-                        <div class="card hovercard">
-                            <div class="info">
-                                <div class="">Name : Austin</div>
-                                <hr />
-                                <div class="">Matric Number : VUG/CSC/17/2383</div>
-                                <hr />
-                                <div class="">Department : Computer Science</div>
-                                <hr />
-                                <div class="">Level : 400</div>
-                            </div>
+                        <div class="card hovercard" id="details">
+                            <?php	
+                                echo userInfo($connection);
+                            ?>
                         </div>
                     </div>
                 </div>
@@ -70,11 +84,13 @@
                             <div class="info">
                                 <div class="">Event</div>
                                 <hr />
-                                <div class="">Name : Christmas</div>
+                                <div class="">Name : <?php echo $event['name']; ?></div>
                                 <hr />
-                                <div class="">Date : 25/12/2020</div>
+                                <div class="">Date : <?php echo $event['date']; ?></div>
                                 <hr />
-                                <div class="">Time : 12:00</div>
+                                <div class="">Time :<?php echo $event['start_time']; ?></div>
+                                <hr />
+                                <div class="">Time :<?php echo $event['late_at']; ?></div>
                             </div>
                         </div>
                     </div>
@@ -87,7 +103,7 @@
                                 <label for="middle-name" class="col-form-label col-md-6 col-sm-6 label-align">Enter Matric Number
                                 </label>
                                 <div class="col-md-12 col-sm-12">
-                                    <input id="middle-name" class="form-control" type="text" name="mName" required="required" />
+                                    <input id="mat_no" class="form-control" type="text" name="reg" required="required" />
                                 </div>
                             </div>
                         </div>
@@ -127,3 +143,20 @@
 </body>
 
 </html>
+<script>
+     $(document).on('blur', '#mat_no', function()
+     {  
+        var matNo = $(this).text();  
+        alert(matNo) 
+           $.ajax({  
+                url:"info.php",  
+                method:"POST",  
+                data:{matNo:matNo}, 
+			    dataType:"text",  
+                success:function(data){  
+                     $('#details').html(data);
+                     alert(matNo)
+                } 
+           });  
+    });
+</script>
