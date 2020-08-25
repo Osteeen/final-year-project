@@ -153,7 +153,7 @@ $row = mysqli_fetch_array($account);
 
                           <tbody>
                             <tr>
-                              <td>Tiger Nixon</td>
+                              <td>Austin </td>
                               <td>CSC </td>
                               <td>vug</td>
                               <td>mass</td>
@@ -161,18 +161,18 @@ $row = mysqli_fetch_array($account);
                               <td>Male</td>
                             </tr>
                             <tr>
-                              <td>Tiger Nixon</td>
+                              <td>Jimmy </td>
                               <td>CSC </td>
                               <td>vug</td>
-                              <td>mass</td>
+                              <td>easter</td>
                               <td>2010/04/25</td>
                               <td>Male</td>
                             </tr>
                             <tr>
-                              <td>Tiger Nixon</td>
+                              <td>Danny </td>
                               <td>CSC </td>
                               <td>vug</td>
-                              <td>mass</td>
+                              <td>christmas</td>
                               <td>2090/04/25</td>
                               <td>Male</td>
                             </tr>

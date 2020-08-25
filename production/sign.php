@@ -49,12 +49,12 @@
     <div class="wrapper d-flex align-items-stretch">
         <!-- Page Content  -->
         <div id="content" class="p-3 p-md-3 pt-3">
-            <div class="container-fluid row center" style="width: 70%; height: 80%" >
+            <div class="container-fluid row " style="width: 100%; height: 80%" >
                 <div class="col-lg-6 col-sm-6">
                     <div class="">
                         <div class="card hovercard">
                             <div class="info">
-                                <img src="./images/user.png" class="img-thumbnail" alt="..." />
+                                <img src="./images/user.jpg" class="img-thumbnail" alt="..." />
                             </div>
                         </div>
                     </div>
@@ -64,7 +64,7 @@
                     <div class="">
                         <div class="card hovercard">
                             <div class="info">
-                                <img src="./images/fingerprint.png" class="img-thumbnail" alt="..." />
+                                <img src="./images/fingerprint.gif" class="img-thumbnail" alt="..." />
                             </div>
                         </div>
                     </div>
@@ -72,9 +72,19 @@
                 <div class="col-lg-6 col-sm-6">
                     <div class="">
                         <div class="card hovercard" id="details">
-                            <?php	
-                                echo userInfo($connection);
-                            ?>
+                        <div class="info">
+                        <div class="">User : </div>
+                        <hr />
+                        <div class="">Name : </div>
+                        <hr />
+                        <div class="">MatNo/Staff Id : </div>
+                        <hr />
+                        <div class="">Department : </div>
+                        <hr />
+                        <div class="">Level/Position : </div>
+                        
+                        
+                    </div>
                         </div>
                     </div>
                 </div>
@@ -102,7 +112,7 @@
                     <div class="">
                         <div class="card hovercard">
                             <div class="alert alert-warning alert-dismissible fade show" role="alert">
-                        <strong>Biometric Device Not Detective!</strong> 
+                        <strong>Fingerprint Device Not Detective!</strong> 
                         <button type="button" class="close" data-dismiss="alert" aria-label="Close">
                             <span aria-hidden="true">&times;</span>
                         </button>
