@@ -249,6 +249,7 @@ $row = mysqli_fetch_array($account);
                                             <div class="btn btn-primary btn-sm col-md-6 col-sm-6" type="button" class="btn btn-primary form-group row btn-sm col-md-6 col-sm-6" data-toggle="modal" data-target="#exampleModalCenter">
                                                 Register Fingerprint
                                             </div>
+                                            
                                         </div>
 
                                         <!-- Modal -->
@@ -274,6 +275,19 @@ $row = mysqli_fetch_array($account);
                                                                         </picture>
                                                                     </div>
                                                                 </div>
+                                                                <div class="col-lg-12 col-sm-12">
+                    <div class="">
+                        <div class="card hovercard">
+                            <div class="alert alert-warning alert-dismissible fade show" role="alert">
+                        <strong>Fingerprint Device Not Detective!</strong> 
+                        <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                        </div>
+                           
+                        </div>
+                    </div>
+                </div>
                                                             </div>
                                                         </div>
                                                     </div>

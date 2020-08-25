@@ -243,7 +243,7 @@ $row = mysqli_fetch_array($account);
                                                 </select>
                                             </div>
                                         </div>
-                                        
+
                                         <div class="file-field item form-group row">
                                             <label class="control-label col-md-3 col-sm-3 label-align">Upload Photo<span>*</span></label>
                                             <div class="btn btn-primary btn-sm col-md-6 col-sm-6">
@@ -283,6 +283,19 @@ $row = mysqli_fetch_array($account);
                                                                             <img src="./images/fingerprint.gif" class="img-fluid img-thumbnail" alt="..." />
                                                                         </picture>
                                                                     </div>
+                                                                    <div class="col-lg-12 col-sm-12">
+                    <div class="">
+                        <div class="card hovercard">
+                            <div class="alert alert-warning alert-dismissible fade show" role="alert">
+                        <strong>Fingerprint Device Not Detective!</strong> 
+                        <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                        </div>
+                           
+                        </div>
+                    </div>
+                </div>
                                                                 </div>
                                                             </div>
                                                         </div>
