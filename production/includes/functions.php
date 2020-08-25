@@ -108,7 +108,7 @@ if (isset($_POST['lock'])) {
                 $query ="INSERT INTO  staffs (id, staff_ID, first_name, last_name, mName, gender, phone, department, designation, fingerprint, position, image)
                 VALUES('', '$staff_ID', '$fname', '$lname', '$mName', '$gender', '$phone', '$department', '$designation', '$fingerprint', '$position', '$image')";
                 mysqli_query($connection, $query);
-                echo '<script>alert("Staff registered successfully")</script>';
+                echo '<script>alert("Staff registered successfully. Missing fingerprint")</script>';
             }
         }
         //register students
@@ -140,7 +140,7 @@ if (isset($_POST['lock'])) {
                 $query ="INSERT INTO  students(id, mat_no, first_name, last_name, mName, gender, program, department, level, phone, fingerprint, image)
                 VALUES('', '$s_ID', '$fname', '$lname', '$mName', '$gender', '$program', '$department', '$level', '$phone', '$fingerprint', '$image')";
                 mysqli_query($connection, $query);
-                echo '<script>alert("Student registered successfully")</script>';
+                echo '<script>alert("Student registered successfully. Missing Fingerprint")</script>';
             }
         }
 

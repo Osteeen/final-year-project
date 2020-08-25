@@ -279,7 +279,7 @@ $row = mysqli_fetch_array($account);
                     <div class="">
                         <div class="card hovercard">
                             <div class="alert alert-warning alert-dismissible fade show" role="alert">
-                        <strong>Fingerprint Device Not Detective!</strong> 
+                        <strong>Fingerprint Device Not Detective! Proceed To Update Late</strong> 
                         <button type="button" class="close" data-dismiss="alert" aria-label="Close">
                             <span aria-hidden="true">&times;</span>
                         </button>
