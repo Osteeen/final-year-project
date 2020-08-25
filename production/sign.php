@@ -49,12 +49,12 @@
     <div class="wrapper d-flex align-items-stretch">
         <!-- Page Content  -->
         <div id="content" class="p-3 p-md-3 pt-3">
-            <div class="container-fluid row" >
+            <div class="container-fluid row center" style="width: 70%; height: 80%" >
                 <div class="col-lg-6 col-sm-6">
                     <div class="">
                         <div class="card hovercard">
                             <div class="info">
-                                <!-- <img src="./images/man.jpeg" class="img-thumbnail" alt="..." /> -->
+                                <img src="./images/user.png" class="img-thumbnail" alt="..." />
                             </div>
                         </div>
                     </div>
@@ -97,26 +97,16 @@
                 </div>
 
                 
-                </div>
+                
                 <div class="col-lg-12 col-sm-12">
                     <div class="">
                         <div class="card hovercard">
-                            <div class="file-field item form-group row">
-                                <div class="btn col-md-12 col-sm-12" type="button" data-toggle="modal" data-target="#exampleModalCenter">
-                                    <h1>SIGN</h1>
-                                </div>
-                                <br />
-                                <br />
-                                <br />
-                                <br />
-                                <br />
-                            </div>
                             <div class="alert alert-warning alert-dismissible fade show" role="alert">
-<strong>DEVICE NOT DETECTED!</strong> 
-  <button type="button" class="close" data-dismiss="alert" aria-label="Close">
-    <span aria-hidden="true">&times;</span>
-  </button>
-</div>
+                        <strong>Biometric Device Not Detective!</strong> 
+                        <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                        </div>
                            
                         </div>
                     </div>
