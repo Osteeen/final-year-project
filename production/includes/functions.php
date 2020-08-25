@@ -101,7 +101,7 @@ if (isset($_POST['lock'])) {
             if ($staff['staff_ID']== $staff_ID)
             {
                 echo '<script>alert("Staff Already exist")</script>';
-                header('location: index.php#signin');
+                header('location: registerstaff.php');
             }
             else
             {
@@ -110,7 +110,7 @@ if (isset($_POST['lock'])) {
                 VALUES('', '$staff_ID', '$fname', '$lname', '$mName', '$gender', '$phone', '$department', '$designation', '$fingerprint', '$position', '$image')";
                 mysqli_query($connection, $query);
                 echo '<script>alert("Staff registered successfully. Missing fingerprint")</script>';
-                header('location: index.php#signin');
+                header('location: registerstaff.php');
             }
         }
         //register students
