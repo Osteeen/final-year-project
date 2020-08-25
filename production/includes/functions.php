@@ -89,9 +89,9 @@ if (isset($_POST['lock'])) {
             $phone = mysqli_real_escape_string($connection, $_POST['phone']);
             $department = mysqli_real_escape_string($connection, $_POST['department']);
             $designation = mysqli_real_escape_string($connection, $_POST['designation']);
-            $fingerprint = mysqli_real_escape_string($connection, $_POST['finger']);
-            $position = mysqli_real_escape_string($connection, $_POST['position']);
-            $image = mysqli_real_escape_string($connection, $_POST['image']);
+            $fingerprint = mysqli_real_escape_string($connection, $_POST['fName']);
+            $position = mysqli_real_escape_string($connection, $_POST['fName']);
+            $image = mysqli_real_escape_string($connection, $_POST['fName']);
     
             //check if user already exist
             $staff_check_query = "SELECT * FROM staffs WHERE staff_ID = '$staff_ID' LIMIT 1";
