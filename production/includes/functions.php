@@ -96,7 +96,7 @@ if (isset($_POST['lock'])) {
             //check if user already exist
             $staff_check_query = "SELECT * FROM staffs WHERE staff_ID = '$staff_ID' LIMIT 1";
             $result = mysqli_query($connection, $staff_check_query);
-            $staff = mysqli_fetch_assoc($result);
+            $staff = mysqli_fetch_array($result);
     
             if ($staff['staff_ID']== $staff_ID)
             {
