@@ -10,13 +10,13 @@
         $output = '';
         $output .= '
                     <div class="info">
-                        <div class="">Name : Austin</div>
+                        <div class="">Name : </div>
                         <hr />
-                        <div class="">Matric Number : VUG/CSC/17/2383</div>
+                        <div class="">Matric Number : </div>
                         <hr />
-                        <div class="">Department : Computer Science</div>
+                        <div class="">Department : </div>
                         <hr />
-                        <div class="">Level : 400</div>
+                        <div class="">Level : </div>
                     </div>
                     ';
 		return $output;
@@ -54,7 +54,7 @@
                     <div class="">
                         <div class="card hovercard">
                             <div class="info">
-                                <img src="./images/man.jpeg" class="img-thumbnail" alt="..." />
+                                <!-- <img src="./images/man.jpeg" class="img-thumbnail" alt="..." /> -->
                             </div>
                         </div>
                     </div>
