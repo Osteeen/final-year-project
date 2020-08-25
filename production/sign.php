@@ -96,20 +96,9 @@
                     </div>
                 </div>
 
-                <div class="col-lg-6 col-sm-6">
-                    <div class="">
-                        <div class="card hovercard">
-                            <div class="item form-group">
-                                <label for="middle-name" class="col-form-label col-md-6 col-sm-6 label-align">Enter Matric Number
-                                </label>
-                                <div class="col-md-12 col-sm-12">
-                                    <input id="mat_no" class="form-control" type="text" name="reg" required="required" />
-                                </div>
-                            </div>
-                        </div>
-                    </div>
+                
                 </div>
-                <div class="col-lg-6 col-sm-6">
+                <div class="col-lg-12 col-sm-12">
                     <div class="">
                         <div class="card hovercard">
                             <div class="file-field item form-group row">
@@ -119,7 +108,22 @@
                                 <br />
                                 <br />
                                 <br />
+                                <br />
+                                <br />
                             </div>
+                            <div class="alert alert-warning alert-dismissible fade show" role="alert">
+<strong>DEVICE NOT DETECTED!</strong> 
+  <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+    <span aria-hidden="true">&times;</span>
+  </button>
+</div>
+                           
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
                         </div>
                     </div>
                 </div>
