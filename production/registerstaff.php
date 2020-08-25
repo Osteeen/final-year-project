@@ -264,7 +264,7 @@ $row = mysqli_fetch_array($account);
                                                         </button>
                                                     </div>
                                                     <div class="modal-body">
-                                                        <div class="col-lg-12 col-sm-6">
+                                                        <div class="col-lg-12 col-sm-12">
                                                             <div class="">
                                                                 <div class="card hovercard">
                                                                     <div class="info">
