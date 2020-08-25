@@ -98,7 +98,7 @@ if (isset($_POST['lock'])) {
             $result = mysqli_query($connection, $staff_check_query);
             $staff = mysqli_fetch_assoc($result);
     
-            if ($staff['staff_ID']=== $staff_ID)
+            if ($staff['staff_ID']== $staff_ID)
             {
                 echo '<script>alert("Staff Already exist")</script>';
             }
