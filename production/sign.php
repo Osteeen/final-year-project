@@ -33,6 +33,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <link rel="icon" href="images/logo.jpg" type="image/ico" />
     <title>Take Fingerprint</title>
+    <script type="text/javascript" defer src="face-api.min.js"></script>
+    <script type="text/javascript" defer src="script.js"></script>
 
     <!-- Bootstrap -->
     <link href="../vendors/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet" />
@@ -43,6 +45,11 @@
 
     <!-- Custom Theme Style -->
     <link rel="stylesheet" href="./css/verifyfingerprint.css" />
+    <style>
+    canvas {
+      position: absolute;
+    }
+    </style>
 </head>
 
 <body>
@@ -54,7 +61,7 @@
                     <div class="">
                         <div class="card hovercard">
                             <div class="info">
-                                <img src="./images/user.jpg" class="img-thumbnail" alt="..." />
+                                <img src="./images/user.jpg" width="470" height="360" class="img-thumbnail" alt="..." />
                             </div>
                         </div>
                     </div>
@@ -64,7 +71,7 @@
                     <div class="">
                         <div class="card hovercard">
                             <div class="info">
-                                <img src="./images/fingerprint.gif" class="img-thumbnail" alt="..." />
+                            <video id="video" width="620" height="460" autoplay muted></video>
                             </div>
                         </div>
                     </div>
