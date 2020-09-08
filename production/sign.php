@@ -48,6 +48,8 @@
     <style>
     canvas {
       position: absolute;
+      top: 0;
+      left: 0;
     }
     </style>
 </head>
@@ -70,8 +72,8 @@
                 <div class="col-lg-6 col-sm-6">
                     <div class="">
                         <div class="card hovercard">
-                            <div class="info">
-                            <video id="video" width="620" height="460" autoplay muted></video>
+                            <div id="vid" class="info">
+                            <video id="video" width="610" height="450" autoplay muted></video>
                             </div>
                         </div>
                     </div>
