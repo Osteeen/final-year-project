@@ -17,11 +17,8 @@ async function startVideo() {
 
 video.addEventListener('play', async () => {
   const container = document.createElement('div')
-  container.id = 'vid';
   container.style.position = 'relative'
-  document.getElementById("vid").append(container); 
-  
-  
+  document.getElementById('vid').append(container)  
   const labeledFaceDescriptors = await loadLabeledImages()
   const faceMatcher = new faceapi.FaceMatcher(labeledFaceDescriptors, 0.6)
   //document.body.append('Loaded')
@@ -39,7 +36,6 @@ video.addEventListener('play', async () => {
     const resizedDetections = faceapi.resizeResults(detections, displaySize)
     const results = resizedDetections.map(d => faceMatcher.findBestMatch(d.descriptor))
     results.forEach((result, i) => {
-    //document.body.append(results)
     const box = resizedDetections[i].detection.box
     const drawBox = new faceapi.draw.DrawBox(box, { label: result.toString() })
     canvas.getContext('2d').clearRect(0, 0, canvas.width, canvas.height)
