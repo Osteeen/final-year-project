@@ -1,5 +1,5 @@
 <?php
-    
+    $S_id = $_GET['id'];
     $img = $_POST['image'];
     $folderPath = "upload/";
   
@@ -8,11 +8,11 @@
     $image_type = $image_type_aux[1];
   
     $image_base64 = base64_decode($image_parts[1]);
-    $fileName = uniqid() . '.png';
+    $fileName = $S_id . '.jpg';
   
     $file = $folderPath . $fileName;
     file_put_contents($file, $image_base64);
   
-    print_r($fileName);
+    header('location: capture.php?id='.$S_id.'2');
   
 ?>

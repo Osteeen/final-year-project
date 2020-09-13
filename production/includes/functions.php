@@ -89,9 +89,7 @@ if (isset($_POST['lock'])) {
             $phone = mysqli_real_escape_string($connection, $_POST['phone']);
             $department = mysqli_real_escape_string($connection, $_POST['department']);
             $designation = mysqli_real_escape_string($connection, $_POST['designation']);
-            $fingerprint = mysqli_real_escape_string($connection, $_POST['fName']);
-            $position = mysqli_real_escape_string($connection, $_POST['fName']);
-            $image = mysqli_real_escape_string($connection, $_POST['fName']);
+            $position = mysqli_real_escape_string($connection, $_POST['position']);
     
             //check if user already exist
             $staff_check_query = "SELECT * FROM staffs WHERE staff_ID = '$staff_ID' LIMIT 1";
@@ -106,11 +104,11 @@ if (isset($_POST['lock'])) {
             else
             {
                 //register
-                $query ="INSERT INTO  staffs (id, staff_ID, first_name, last_name, mName, gender, phone, department, designation, fingerprint, position, image)
-                VALUES('', '$staff_ID', '$fname', '$lname', '$mName', '$gender', '$phone', '$department', '$designation', '$fingerprint', '$position', '$image')";
+                $query ="INSERT INTO  staffs (id, staff_ID, first_name, last_name, mName, gender, phone, department, designation, position)
+                VALUES('', '$staff_ID', '$fname', '$lname', '$mName', '$gender', '$phone', '$department', '$designation', '$position')";
                 mysqli_query($connection, $query);
                 echo '<script>alert("Staff registered successfully. Missing fingerprint")</script>';
-                header('location: registerstaff.php');
+                header('location: capture.php?id='.$staff_ID.'');
             }
         }
         //register students

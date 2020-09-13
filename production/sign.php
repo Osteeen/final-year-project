@@ -4,23 +4,6 @@
     $id = $_GET['id'];
     $getEvent = mysqli_query($connection,  "SELECT * FROM events WHERE id = '$id'");
     $event = mysqli_fetch_array($getEvent);
-    
-    function userInfo($connection)
-	{
-        $output = '';
-        $output .= '
-                    <div class="info">
-                        <div class="">Name : </div>
-                        <hr />
-                        <div class="">Matric Number : </div>
-                        <hr />
-                        <div class="">Department : </div>
-                        <hr />
-                        <div class="">Level : </div>
-                    </div>
-                    ';
-		return $output;
-    }
 ?>
 <!DOCTYPE html>
 <html lang="en">

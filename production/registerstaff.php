@@ -234,73 +234,12 @@ $row = mysqli_fetch_array($account);
                                             </div>
                                         </div>
 
-                                        <div class="file-field item form-group row">
-                                            <label class="control-label col-md-3 col-sm-3 label-align">Upload Photo</label>
-                                            <div class="btn btn-primary btn-sm col-md-6 col-sm-6">
-                                                <span>Choose file</span>
-                                                <input type="file" name="image" />
-                                            </div>
-                                        </div>
-
                                         <!-- Button trigger modal -->
                                         <div class="file-field item form-group row">
-                                            <label class="control-label col-md-3 col-sm-3 label-align">Register Fingerprint
-                                            </label>
-                                            <div class="btn btn-primary btn-sm col-md-6 col-sm-6" type="button" class="btn btn-primary form-group row btn-sm col-md-6 col-sm-6" data-toggle="modal" data-target="#exampleModalCenter">
-                                                Register Fingerprint
-                                            </div>
-                                            
-                                        </div>
-
-                                        <!-- Modal -->
-                                        <div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
-                                            <div class="modal-dialog modal-dialog-centered" role="document">
-                                                <div class="modal-content">
-                                                    <div class="modal-header">
-                                                        <h5 class="modal-title" id="exampleModalLongTitle">
-                                                            Register
-                                                        </h5>
-                                                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                                                            <span aria-hidden="true">&times;</span>
-                                                        </button>
-                                                    </div>
-                                                    <div class="modal-body">
-                                                        <div class="col-lg-12 col-sm-12">
-                                                            <div class="">
-                                                                <div class="card hovercard">
-                                                                    <div class="info">
-                                                                        <picture>
-                                                                            <source srcset="./images/fingerprint.gif" type="image/svg+xml" />
-                                                                            <img src="./images/fingerprint.gif" class="img-fluid img-thumbnail" alt="..." />
-                                                                        </picture>
-                                                                    </div>
-                                                                </div>
-                                                                <div class="col-lg-12 col-sm-12">
-                    <div class="">
-                        <div class="card hovercard">
-                            <div class="alert alert-warning alert-dismissible fade show" role="alert">
-                        <strong>Fingerprint Device Not Detective! Proceed To Update Late</strong> 
-                        <button type="button" class="close" data-dismiss="alert" aria-label="Close">
-                            <span aria-hidden="true">&times;</span>
-                        </button>
-                        </div>
-                           
-                        </div>
-                    </div>
-                </div>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                    <div class="modal-footer">
-                                                        <button type="button" class="btn btn-secondary" data-dismiss="modal">
-                                                            Close
-                                                        </button>
-                                                        <button type="submit" name="register_staff" class="btn btn-primary">
+                                            <button type="submit" name="register_staff" class="btn btn-primary btn-sm col-md-6 col-sm-6 form-group row">
                                                             Submit
                                                         </button>
-                                                    </div>
-                                                </div>
-                                            </div>
+                                            
                                         </div>
                                     </form>
                                 </div>
