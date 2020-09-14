@@ -235,11 +235,14 @@ $row = mysqli_fetch_array($account);
                                         </div>
 
                                         <!-- Button trigger modal -->
-                                        <div class="file-field item form-group row">
-                                            <button type="submit" name="register_staff" class="btn btn-primary btn-sm col-md-6 col-sm-6 form-group row">
+                                         <div class="file-field item form-group row">
+                                            <label class="control-label col-md-3 col-sm-3 label-align">Submit
+                                                <span>*</span></label>
+                                                <div class="file-field item form-group row">
+                                            <button type="submit" name="register_staff" class="btn btn-primary btn-sm col-md-12 col-sm-12 form-group row">
                                                             Submit
-                                                        </button>
-                                            
+                                                        </button>                                            
+                                        </div>
                                         </div>
                                     </form>
                                 </div>

@@ -1,3 +1,4 @@
+var p1 = "yooooo";
 const video = document.getElementById('video')
 
 Promise.all([
@@ -14,6 +15,7 @@ async function startVideo() {
     stream => video.srcObject = stream,
     err => console.error(err)
   ) 
+  
 
 video.addEventListener('play', async () => {
   const container = document.createElement('div')
@@ -38,6 +40,8 @@ video.addEventListener('play', async () => {
     results.forEach((result, i) => {
     const box = resizedDetections[i].detection.box
     const drawBox = new faceapi.draw.DrawBox(box, { label: result.toString() })
+    
+ 
     canvas.getContext('2d').clearRect(0, 0, canvas.width, canvas.height)
     faceapi.draw.drawFaceLandmarks(canvas, resizedDetections)
     faceapi.draw.drawFaceExpressions(canvas, resizedDetections)

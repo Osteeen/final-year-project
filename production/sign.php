@@ -4,6 +4,10 @@
     $id = $_GET['id'];
     $getEvent = mysqli_query($connection,  "SELECT * FROM events WHERE id = '$id'");
     $event = mysqli_fetch_array($getEvent);
+
+  
+    $getUser = mysqli_query($connection,  "SELECT * FROM staffs WHERE staff_ID = '1234'");
+    $user = mysqli_fetch_array($getUser);
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -17,7 +21,9 @@
     <link rel="icon" href="images/logo.jpg" type="image/ico" />
     <title>Take Fingerprint</title>
     <script type="text/javascript" defer src="face-api.min.js"></script>
-    <script type="text/javascript" defer src="script.js"></script>
+    <script type="text/javascript" defer src="./script.js"></script>
+
+    
 
     <!-- Bootstrap -->
     <link href="../vendors/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet" />
@@ -65,15 +71,19 @@
                     <div class="">
                         <div class="card hovercard" id="details">
                         <div class="info">
-                        <div class="">User : </div>
+
+                        <div class="form-group">
+                         <label class="col-form-label col-md-3 col-sm-3 label-align" for="usr">Name:</label>
+                        <input type="text" class="form-control" id="usr">
+                        </div>
+                        <hr/>
+                        <div class="">Name : <?php echo $user['first_name']; ?> </div>
                         <hr />
-                        <div class="">Name : </div>
+                        <div class="">MatNo/Staff Id : <?php echo $user['staff_ID']; ?> </div>
                         <hr />
-                        <div class="">MatNo/Staff Id : </div>
+                        <div class="">Department : <?php echo $user['department']; ?> </div>
                         <hr />
-                        <div class="">Department : </div>
-                        <hr />
-                        <div class="">Level/Position : </div>
+                        <div class="">Level/Position : <?php echo $user['position']; ?> </div>
                         
                         
                     </div>
@@ -98,21 +108,7 @@
                     </div>
                 </div>
 
-                
-                
-                <div class="col-lg-12 col-sm-12">
-                    <div class="">
-                        <div class="card hovercard">
-                            <div class="alert alert-warning alert-dismissible fade show" role="alert">
-                        <strong>Fingerprint Device Not Detective!</strong> 
-                        <button type="button" class="close" data-dismiss="alert" aria-label="Close">
-                            <span aria-hidden="true">&times;</span>
-                        </button>
-                        </div>
-                           
-                        </div>
-                    </div>
-                </div>
+            
             </div>
         </div>
     </div>
@@ -134,8 +130,9 @@
     <script src="../vendors/jQuery-Smart-Wizard/js/jquery.smartWizard.js"></script>
     <!-- Custom Theme Scripts -->
     <script src="../build/js/custom.min.js"></script>
-
     <script src="js/home.js"></script>
+    
+  
 </body>
 
 </html>
@@ -155,4 +152,7 @@
                 } 
            });  
     });
+
 </script>
+
+

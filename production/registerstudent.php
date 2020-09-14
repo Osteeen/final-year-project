@@ -244,21 +244,14 @@ $row = mysqli_fetch_array($account);
                                             </div>
                                         </div>
 
-                                        <div class="file-field item form-group row">
-                                            <label class="control-label col-md-3 col-sm-3 label-align">Upload Photo<span>*</span></label>
-                                            <div class="btn btn-primary btn-sm col-md-6 col-sm-6">
-                                                <span>Choose file</span>
-                                                <input type="file" name="image" />
-                                            </div>
-                                        </div>
-
                                         <!-- Button trigger modal -->
                                         <div class="file-field item form-group row">
-                                            <label class="control-label col-md-3 col-sm-3 label-align">Register Fingerprint
+                                            <label class="control-label col-md-3 col-sm-3 label-align">Submit
                                                 <span>*</span></label>
-                                            <div class="btn btn-primary btn-sm col-md-6 col-sm-6" type="button" class="btn btn-primary form-group row btn-sm col-md-6 col-sm-6" data-toggle="modal" data-target="#exampleModalCenter">
-                                                Register Fingerprint
-                                            </div>
+                                                <div class="file-field item form-group row">
+                                            <button type="submit" name="register_student" class="btn btn-primary btn-sm col-md-12 col-sm-12 form-group row">
+                                                            Submit
+                                                        </button>                                            
                                         </div>
 
                                         <!-- Modal -->

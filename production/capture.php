@@ -93,7 +93,7 @@
             document.getElementById('results').innerHTML = '<img src="'+data_uri+'"/>';
         } );
     }
-</script>>
+            </script>
                                 </div>
                             </div>
                         </div>

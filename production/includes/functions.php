@@ -107,7 +107,7 @@ if (isset($_POST['lock'])) {
                 $query ="INSERT INTO  staffs (id, staff_ID, first_name, last_name, mName, gender, phone, department, designation, position)
                 VALUES('', '$staff_ID', '$fname', '$lname', '$mName', '$gender', '$phone', '$department', '$designation', '$position')";
                 mysqli_query($connection, $query);
-                echo '<script>alert("Staff registered successfully. Missing fingerprint")</script>';
+                echo '<script>alert("Staff registered successfully. Missing facial details")</script>';
                 header('location: capture.php?id='.$staff_ID.'');
             }
         }
@@ -122,9 +122,7 @@ if (isset($_POST['lock'])) {
             $phone = mysqli_real_escape_string($connection, $_POST['phone']);
             $department = mysqli_real_escape_string($connection, $_POST['dept']);
             $level = mysqli_real_escape_string($connection, $_POST['level']);
-            $fingerprint = mysqli_real_escape_string($connection, $_POST['fName']);
             $program = mysqli_real_escape_string($connection, $_POST['program']);
-            $image = mysqli_real_escape_string($connection, $_POST['fName']);
     
             //check if user already exist
             $student_check_query = "SELECT * FROM students WHERE mat_no = '$s_ID'";
@@ -133,14 +131,16 @@ if (isset($_POST['lock'])) {
             if (mysqli_num_rows($result) >= 1)
             {
                 echo '<script>alert("Student Already exist")</script>';
+                header('location: registerstudent.php');
             }
             else
             {
                 //register
-                $query ="INSERT INTO  students(id, mat_no, first_name, last_name, mName, gender, program, department, level, phone, fingerprint, image)
-                VALUES('', '$s_ID', '$fname', '$lname', '$mName', '$gender', '$program', '$department', '$level', '$phone', '$fingerprint', '$image')";
+                $query ="INSERT INTO  students(id, mat_no, first_name, last_name, mName, gender, program, department, level, phone)
+                VALUES('', '$s_ID', '$fname', '$lname', '$mName', '$gender', '$program', '$department', '$level', '$phone')";
                 mysqli_query($connection, $query);
-                echo '<script>alert("Student registered successfully. Missing Fingerprint")</script>';
+                echo '<script>alert("Student registered successfully. Missing facial details")</script>';
+                header('location: capture.php?id='.$s_ID.'');
             }
         }
 
