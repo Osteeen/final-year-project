@@ -240,10 +240,10 @@ $row = mysqli_fetch_array($account);
                                                 <span>*</span></label>
                                                 <div class="file-field item form-group row">
                                             <button type="submit" name="register_staff" class="btn btn-primary btn-sm col-md-12 col-sm-12 form-group row">
-                                                            Submit
-                                                        </button>                                            
+                                                Submit
+                                            </button>                                            
                                         </div>
-                                        </div>
+                                    </div>     
                                     </form>
                                 </div>
                             </div>
